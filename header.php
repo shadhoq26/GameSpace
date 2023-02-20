@@ -23,7 +23,7 @@
                         <?php
                         }else{
                         ?>
-                            <a href ="SignUp-Login.php" class = "header-buttons"> Sign Up/Login</a>
+                            <a href ="SignUp.php" class = "header-buttons"> Sign Up/Login</a>
                         <?php
                     }
                 ?>                        

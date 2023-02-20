@@ -1,0 +1,60 @@
+body{
+   overflow-y: hidden;
+}
+
+#signupContainer{
+   padding-top: 320px;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+   display: flex;
+   width: 100%;
+   height: 100%;
+}
+
+#signupContainer input{
+   height: 30px;
+   float: left;
+}
+
+#signupContainer form{
+   background-color:rgb(170, 176, 211);
+   border-radius: 5px ;
+   display:block;
+   justify-content: center;
+   border: 5px solid black;
+   align-items: center;
+   margin-top: 50px;
+}
+   
+#signupContainer h1{
+   text-align: center;
+   width: 100%;
+}
+   
+#signupContainer .textbox{
+   width: 40%;
+   margin: 10px;
+   display: block;
+}
+   
+#submitButton{
+   margin-bottom: 10px;
+}
+
+#submitButtonContainer{
+   width: 100%;
+   display: flex;
+   justify-content:center ;
+}
+
+#LoginPageButton{
+   margin-bottom: 10px;
+   margin-left: 30px;
+}
+
+#LoginPageButtonContainer{
+   width: 100%;
+   display: flex;
+   justify-content:center ;
+}
