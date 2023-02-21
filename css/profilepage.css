@@ -1,0 +1,23 @@
+#profileOuterContainer{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+ }
+       
+ #profileInnerContainer{
+    width: 30%;
+    margin-top: 300px;
+    background-color: rgb(170, 176, 211);
+    border-radius: 10px;
+    border: 2px solid black;
+ }
+    
+ #profileInnerContainer h1{
+    text-decoration: underline;   
+ }
+     
+ #profileInnerContainer h1,p{
+    margin-left: 10px;
+ }
+     

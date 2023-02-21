@@ -3,7 +3,7 @@
 
 <!-- Contains all input boxes so the user will be able to sign up by entering their details -->
 <div id= "signupContainer">
-    <form action = "signup.php" method= "post">
+    <form action = "signupscript.php" method= "post">
         <h1>Sign Up</h1> <br>
         <input type="text" name="firstName" placeholder="First Name" class="textbox">
         <input type="text" name="lastName" placeholder="Last Name"class="textbox">
