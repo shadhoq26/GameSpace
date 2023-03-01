@@ -6,5 +6,3 @@ $databaseName = "game_space_website";
 $host = "localhost";
 //Connects to the database.
 $database = new PDO("mysql:dbname=$databaseName;host=$host", $user, $password);
-
-
