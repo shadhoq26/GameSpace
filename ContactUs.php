@@ -3,7 +3,9 @@
 <div id="textContainer">
             <div id="textInnerContainer">
                 <h1> Information about us </h1> <br>
-                <p> test...  </p> <br>
+                <p> test...  </p> 
+                <p> test...  </p> 
+                <br>
                 <img src="">
             </div>
         </div>
