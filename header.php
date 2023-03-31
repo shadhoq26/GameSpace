@@ -14,7 +14,6 @@
     <div class = "header">
         <img id="GameSpaceLogo" src="resources/spaceship1.png"> 
         <h1 id ="title" > GameSpace </h1>   
-        <!-- <h2 id="watermark"> Website created by Shadman Hoque </h2>-->
             <div id= "titleContainer"></div>
                 <!-- Container for all the buttons -->
                 <div id = "container-buttons"> 
