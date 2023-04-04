@@ -4,34 +4,34 @@ include_once "database.php";
 //You will be directed back to the sign up page.
 if (empty($_POST['firstName'])) {
    $message= "A first name is needed";
-   header("Location: signup.php?e=$message");
+   header("Location: SignUppage.php?e=$message");
    exit();
 //if statement which states if a last name isn't entered an error box will appearing saying "A last name is needed".
 //You will be directed back to the sign up page.
 }else if (empty($_POST['lastName'])) {
    $message ="A last name is needed";
-   header("Location: signup.php?e=$message");
+   header("Location: SignUppage.php?e=$message");
    exit();
 }else if (empty($_POST['userName'])){
     $message= "An email is needed";
-    header("Location: signup.php?e= $message");
+    header("Location: SignUppage.php?e= $message");
     exit();
 //if statement which states if an email isn't entered an error box will appearing saying "An email is needed".
 //You will be directed back to the sign up page.   
 }else if (empty($_POST['email'])){
    $message= "An email is needed";
-   header("Location: signup.php?e= $message");
+   header("Location: SignUppage.php?e= $message");
    exit();
 //if statement which states if a password isn't entered an error box will appearing saying "A password is needed". 
 //You will be directed back to the sign up page.  
 } else if (empty($_POST['password'])){
    $message = "A password is needed";
-   header("Location: signup.php?e=$message");
+   header("Location: SignUppage.php?e=$message");
    exit();
 //If it is not entered an error box will appear saying...
 } else if (!str_contains($_POST['email'],"@")){
   $message = "An email is need to proceed";
-  header("Location: signup.php?e=$message");
+  header("Location: SignUppage.php?e=$message");
   exit(); 
 }
 
@@ -48,13 +48,13 @@ $password=$_POST['password'];
 $userWithEmail = $database -> query("SELECT * FROM accounts WHERE email= '$email'");
 if ($userWithEmail -> rowCount()> 0) {
    $message= "user with that email already exists";
-   header("Location: signup.php?e=$message");
+   header("Location: SignUppage.php?e=$message");
    exist();
 //This means that the user with a new email, that isnt already on the database, will be able to open an account.  
 }else{
    $password = password_hash($password, PASSWORD_DEFAULT);
    $database->query ("INSERT INTO accounts(first_Name, Last_Name, Username, Email, Password)
    VALUES ('$firstName', '$lastName', '$userName','$email','$password')");
-   header("Location: Login.php");
+   header("Location: Loginpage.php");
    exit();
-}    
+} 
