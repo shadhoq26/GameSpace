@@ -1,62 +1,266 @@
 *{
-   font-family:'Arial';
-   color:rgb(0, 0, 0);
-   margin:0;
+    font-family:'Arial';
+    color:rgb(0, 0, 0);
+    margin:0;
  
  }
  body {
-   background-image: url();
-   background-repeat: no-repeat;
-   background-size: cover;   
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;   
  }
  
  .header{
-   background-color:rgb(38, 15, 78);
-   display: flex;
-   width: 100%;
-   height: 120px;
-   position: fixed;
-   z-index: 50;
-   float: left;
+    background-color:rgb(38, 15, 78);
+    display: block;
+    text-align: center; 
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    z-index: 50;
+ 
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
  }
-
+ 
+ #titleContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-left: -40px;
+}
+ 
  #title{
-   color: rgb(255, 255, 255);
-   font-size: 50px;
-   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
-   margin-top: 22px;
-   margin-left: 15px;
+    color: rgb(255, 255, 255);
+    font-size: 90px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);  
+ }
+  
+ #container-for-buttons {
+    background-color:rgb(83, 58, 126);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center ;
+    align-items: center;
+    
  }
  .header-buttons{
-   color: rgb(0, 0, 0);
-   background-color:rgb(255, 255, 255);
-   width: 100px;
-   height: 45px;
-   font-size: 20px;
-   margin-top: 8px;
-   margin-left: 30px;
-   padding: 0px;
-   text-align: center;
-   text-decoration: none;
-   border-radius: 5px;
-   border: solid 2px rgb(0, 0, 0);
-   /* text-shadow: 2px 2px 3px rgba(0,0,0,0.4); */
-   font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color:rgb(255, 255, 255);
+    font-size: 17px;
+    width: 120px;
+    height: 20px;
+    margin-left:10px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+ }
+ 
+ #main {
+    position: relative;
+    padding-top: 170px;
+ }
+ 
+ #block-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+ }
+ 
+ #textContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+ }
+ 
+ #textInnerContainer{
+    height: 300px;
+    width: 40%;
+    background-color: rgb(238, 232, 252);
+    margin-top: 200px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid black;
+ } 
+ 
+ #textInnerContainer h1{
+    text-decoration: underline;
+ }
+ 
+ #textInnerContainer img{
+    height: 50%;
  }
 
- /* .header-signup-buttons{
-   color: rgb(0, 0, 0);
-   background-color:rgb(255, 142, 215);
+ #watermark{
+   position: fixed;
+   margin-left: 5px;
+   color: rgb(255, 255, 255);
+   display: block;
+   z-index: 100;
+   margin-top: 115px;
+   font-size: 20px;
+   font-family:'Poppins';
+   text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+.block {
+   width: 300px;
+   height: 400px;
+   background-color: rgb(194, 194, 194);
+   margin: 30px;
+   border-radius: 10px;
+   transition: 0.2s ease-in-out;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+}
+
+.block:hover {
+   transform: scale(1.1);
+   cursor: pointer;
+}
+
+.block h1 {
+   position: absolute;
+   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+   color: white;
+}
+
+#box-container {
+   width: 100%; 
+   height: 625px ;
+   display: flex;
+   flex-wrap: wrap;
+   position: relative;
+   padding-top: 2px;
+}
+
+#first-container{
+   width: 100%;
+   height: 100%;
+}
+
+#first-box{
+   width: 50%;
+   height: 100%;
+   background-color:rgb(171, 121, 211);
+   float: Left;
+   border-radius: 10px;
+   box-sizing: border-box;
+   border: solid white 2.5px;
+   transition: 0.2 ease-in-out;
+   display:flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   font-size: 20px;
+   align-items: center;
+}
+
+#second-container{
+   width: 100%;
+   height: 100%;
+}
+
+#second-box{
+   width: 50%;
+   height: 100%;
+   background-color:rgb(110, 80, 135);
+   float: Left;
+   border-radius: 10px;
+   box-sizing: border-box;
+   border: solid white 2.5px;
+   transition: 0.2 ease-in-out;
+   display:flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   font-size: 20px;
+   align-items: center;
+}
+
+#first-box:hover{
+   background-color:rgb(0, 0, 0);
+   cursor: pointer;   
+}
+
+#second-box:hover{
+   background-color:rgb(0, 0, 0.0);
+   cursor: pointer;   
+}
+
+#third-box:hover{
+   background-color:rgb(0, 0, 0.0);
+   cursor: pointer;
+}
+
+#fourth-box:hover{
+   background-color:rgb(0, 0, 0.0);
+   cursor: pointer;
+}
+
+#fifth-box:hover{
+   background-color:rgb(0, 0, 0.0);
+   cursor: pointer;
+}
+
+.boxText{
+   color: white;
+   text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+#text-container {
+   background-color: rgba(255, 255, 255, 0.445);
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+#about-text {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+#under-image-container {
+   margin-top: 2px;
+   margin-left:5px;
+   margin-right: 5px;
+   display: flex;
+   height: 170px;
+   overflow: hidden;
+   justify-content: center;
+}
+
+#middle-image-container img {
+   width:255px;
+   height:180px;
+   margin-left: 9px;
+   margin-right: 9px;
+   border-radius: 10px;
+   box-shadow:2px 2px 3px rgba(0,0,0,0.4); 
+}
+
+#login-button-container {
+   display: flex;
+   position: absolute;
+   margin-right: -75%;   
+}
+
+.header-login-button {
+   color: rgb(255, 255, 255);
+   background-color:rgb(146, 134, 134);
    width: 70px;
    height: 20px;
-   margin-left: 70px;
+   margin-left: 10px;
    padding: 5px;
    text-decoration: none;
-   border-radius: 5px;
-   border: solid 2px black;
-   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
-   font-weight: bold;
- } */
+   border-radius: 5px;   
+}
 
  #GameSpaceLogo {
    width: 80px;
@@ -65,25 +269,9 @@
    margin-left: 20px;
  }
 
- #container-buttons {
-   width: 100%;
-   height: 100;
-   display: flex;
-   flex-wrap:wrap;
-   justify-content: left ;
-   align-items: center;
-   margin-top: 0px;
- }
- 
  #searchbar{
    width: 200px;
-   height: 5px;
-   display: block;
-   text-align: center;
-   padding: 20px;
-   font-size: 18px;
-   text-decoration: none;
-   margin-top: 32px;
-   margin-right: 20px;
+   height: 25px;
+   margin-right: 5px;
+   margin-left: 20px;
  }
- 

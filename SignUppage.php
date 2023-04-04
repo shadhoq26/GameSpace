@@ -8,14 +8,14 @@
         <input type="text" name="firstName" placeholder="First Name" class="textbox">
         <input type="text" name="lastName" placeholder="Last Name"class="textbox">
         <input type="text" name="userName" placeholder="Username"class="textbox">
-        <input type="text" name="email" placeholder="Email"class="textbox">
-        <input type="text" name="password" placeholder="Password"class="textbox">
+        <input type="email" name="email" placeholder="Email"class="textbox">
+        <input type="password" name="password" placeholder="Password"class="textbox">
         
         <!-- If the sign up details are wrong and the user tries to submit, an error message will appear stating the error -->
         <div id="submitButtonContainer">
             <input type="submit" name="submit" value="Confirm" id="submitButton"> 
            <!-- <input type="submit" name="submit" value="Already a user ?" id="LoginPage"> -->
-            <a href ="Login.php" class= "buttons"> Already a user ?</a>
+            <a href ="Loginpage.php" class= "buttons"> Already a user ?</a>
         </div>
         
         <?php if (isset($_GET['e'])) { ?>

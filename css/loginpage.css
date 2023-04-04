@@ -1,43 +1,37 @@
-#signupContainer{
+#loginContainer{
     width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 200px;
     position: relative; 
  }
-    
- #signupContainer form{
+ 
+ #loginContainer form{
     width: 500px;
     background-color:rgb(129, 110, 213);
     border-radius: 5px ;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;  
     border: 2px solid black;
  }
-    
- #signupContainer input{
+ 
+ #loginContainer input{
     height: 30px;
     float: left;
  }
-    
- #signupContainer h1{
+ 
+ #loginContainer h1{
     text-align: center;
     width: 100%;
  }
-    
- #signupContainer .textbox{
+ 
+ #loginContainer .textbox{
     width: 40%;
     margin: 10px;
  }
-    
- #submitButton{
+ 
+ #loginContainer #submitButton{
     margin-bottom: 10px;
- }
  
- #submitButtonContainer{
-    width: 100%;
-    display: flex;
-    justify-content:center ;
  }
- 
