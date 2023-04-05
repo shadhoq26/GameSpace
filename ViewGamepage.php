@@ -78,6 +78,14 @@
                                 <input type="radio" name="rating" value="9" id="rating10">
                                 <label for="rating10">10</label>
                                 <input type="submit" value="Submit Review">
+                                <?php
+                                if(isset($_GET["error"])){
+                                    ?>
+                                    <p><?php echo $_GET["error"] ?> </p>
+                                    <?php
+                                    
+                                }
+                                ?>
                             </div>
                         </form>
 

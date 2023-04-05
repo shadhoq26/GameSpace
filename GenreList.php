@@ -25,11 +25,12 @@ $searchResults = $searchResults->fetchAll();
             <h1 class = "boxText2"><?php echo $searchResults[$i]["Name"] ?></h1> 
             <p>Publisher: <?php echo $searchResults[$i]["Publisher"] ?></p>
             <p>Platform: <?php echo $searchResults[$i]["Platform"] ?></p>
-            <p>Rating:</p>
-        </div>
-        <div id="searchprice-box" >   
             <p>Price: <?php echo $searchResults[$i]["Price"] ?></p>
-        </div> 
+        </div>
+        <span class="divider"></span>
+        <div id="search-rating-box">
+            <p>Rating: 7/10</p>
+        </div>
     </div>
     <?php
     }

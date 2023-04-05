@@ -43,16 +43,17 @@
     margin-left: 10px;
  }
  
- #searchprice-box{
-    width: 50%;
-    align-items: center;
-    display: flex;
- }
- 
- #searchprice-box p{
-    font-size: 30px;
-    text-align: right;
- }
+ #search-rating-box{
+   width: 50%;
+   align-items: center;
+   display: flex;
+   justify-content: center;
+}
+
+#search-rating-box p{
+   font-size: 35px;
+   text-align: right;
+}
  
  #search-image-container{
     width: 50%;
@@ -64,3 +65,10 @@
     object-fit:contain;
     background-color: rgb(0, 0, 0);
  }
+
+ .divider{
+   height: auto;
+   width: 10px;
+   background-color: rgb(0, 0, 0);
+   display: inline-block;
+}
