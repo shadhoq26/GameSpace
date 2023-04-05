@@ -16,25 +16,31 @@ $searchResults = $searchResults->fetchAll();
 ?>
 <div id="box-container2">
     <?php
-    for($i=0; $i<count($searchResults);$i++){
-    $url= "ViewGamepage.php?id=".$searchResults[$i]["game_ID"];
-    ?>
-    <div id="first-box2" onclick="location.href='<?php echo $url ?>'">
-        <div id="search-image-container">
-            <img src="resources/GameImages/<?php echo $searchResults[$i]["Cover_Image"] ?>"/>
+    if(count($searchResults)>0){
+        for($i=0; $i<count($searchResults);$i++){
+        $url= "ViewGamepage.php?id=".$searchResults[$i]["game_ID"];
+        ?>
+        <div id="first-box2" onclick="location.href='<?php echo $url ?>'">
+            <div id="search-image-container">
+                <img src="resources/GameImages/<?php echo $searchResults[$i]["Cover_Image"] ?>"/>
+            </div>
+            <div id="information-box">
+                <h1 class = "boxText2"><?php echo $searchResults[$i]["Name"] ?></h1> 
+                <p>Publisher: <?php echo $searchResults[$i]["Publisher"] ?></p>
+                <p>Platform: <?php echo $searchResults[$i]["Platform"] ?></p>
+                <p>Price: <?php echo $searchResults[$i]["Price"] ?></p>
+            </div>
+            <span class="divider"></span>
+            <div id="search-rating-box" >   
+                <p>Rating: 7/10</p>
+            </div> 
         </div>
-        <div id="information-box">
-            <h1 class = "boxText2"><?php echo $searchResults[$i]["Name"] ?></h1> 
-            <p>Publisher: <?php echo $searchResults[$i]["Publisher"] ?></p>
-            <p>Platform: <?php echo $searchResults[$i]["Platform"] ?></p>
-            <p>Price: <?php echo $searchResults[$i]["Price"] ?></p>
-        </div>
-        <span class="divider"></span>
-        <div id="search-rating-box" >   
-            <p>Rating: 7/10</p>
-        </div> 
-    </div>
-    <?php
+        <?php
+        }
+    }else{
+        ?>
+        <p> No search results found, try again.</p>
+        <?php
     }
     ?> 
 </div> 

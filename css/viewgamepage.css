@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header__wrapper header {
+  width: 100%;
+  background: url("../resources/bg.jpeg") no-repeat 50% 20% / cover;
+  min-height: calc(100px + 15vw);
+}
+
+#view-review-container{
+  width: 500px;
+  display: block;
+  background-color: rgb(182, 80, 238);
+}
+
+#view-review-container h1{
+  font-size: 30px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+#view-review-container p{
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+#view-game-container{
+    width: 500px;
+    display: block;
+    background-color: rgb(40, 81, 195);
+  }
+  
+#view-game-container h1{
+    font-size: 30px;
+    margin-left: 10px;
+    text-align: left;
+  }
+  
+#view-game-container p{
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+#view-rating-container{
+    width: 500px;
+    display: block;
+    background-color: rgb(195, 195, 40);
+  }
+
+#reviewbox{
+    width: 500px;
+    display: block;
+    background-color: aqua;
+}
+  
