@@ -222,12 +222,12 @@
 }
 
 #middle-image-container img {
-   width:181px;
-   height:190px;
+   width: 166px;
+   height: 160px;
    margin-left: 10px;
-   margin-right: 9px;
+   margin-right: 10px;
    border-radius: 10px;
-   box-shadow:2px 2px 3px rgba(0,0,0,0.4); 
+   box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 }
 
 #login-button-container {

@@ -22,7 +22,6 @@
                 <img src="imagesweb/index8.jpg"> 
             </div>
             </div> 
-        </div> 
-        <div id="backgroundImage"> </div>   
+        </div>   
     </body>
 </html>
