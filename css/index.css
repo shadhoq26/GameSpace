@@ -97,7 +97,7 @@
     height: 50%;
  }
 
- #watermark{
+ /* #watermark{
    position: fixed;
    margin-left: 5px;
    color: rgb(255, 255, 255);
@@ -107,7 +107,7 @@
    font-size: 20px;
    font-family:'Poppins';
    text-shadow: 2px 2px 3px rgb(0, 0, 0);
-}
+} */
 
 .block {
    width: 300px;
