@@ -17,11 +17,12 @@
                 <img src="imagesweb/index4.jpg">
                 <img src="imagesweb/index7.jpg">
                 <img src="imagesweb/index8.jpg">
-                <img src="imagesweb/index5.jpg">
-                <img src="imagesweb/index4.jpg">
-                <img src="imagesweb/index7.jpg">    
+                <img src="imagesweb/index8.jpg"> 
+                <img src="imagesweb/index8.jpg"> 
+                <img src="imagesweb/index8.jpg"> 
             </div>
             </div> 
-        </div>    
+        </div> 
+        <div id="backgroundImage"> </div>   
     </body>
 </html>

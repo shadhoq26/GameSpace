@@ -21,7 +21,7 @@
                     <a href ="index.php" class= "header-buttons"> Home</a>                    
                     <a href ="Top10Games.php" class= "header-buttons"> Top 10 Games</a>  
                     <a href ="Genre.php" class= "header-buttons"> Genre</a> 
-                    <a href ="ContactUs.php" class= "header-buttons"> Contact Us</a> 
+                    <a href ="ContactUs.php" class= "header-buttons"> About Us</a> 
                                 
                 <div id="login-button-container">
                 <!-- Changes the buttons to profile and logout or login and signup depending on if the user is logged in -->

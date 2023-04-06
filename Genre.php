@@ -17,5 +17,5 @@
             <div class="block2" onclick = "location.href='GenreList.php?genre=Battle Royale'" ><h1>Battle Royale</h1><img src = ""></div>           
         </div>   
     </div>
-    <div id="backgroundImage6"> </div>
+    <div id="backgroundImage"> </div>
     
