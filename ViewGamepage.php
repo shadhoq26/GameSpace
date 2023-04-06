@@ -122,5 +122,6 @@
             ?>
             </div>
         </div>
+        <div id="backgroundImage"> </div>
     </body>
 </html>

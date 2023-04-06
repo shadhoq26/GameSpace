@@ -21,4 +21,4 @@
         </div>   
     </div>
 </div>
-    <div id="backgroundImage6"> </div>
+    <div id="backgroundImage"> </div>

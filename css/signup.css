@@ -84,3 +84,16 @@
    text-decoration: none;
  }
  
+ #backgroundImage{
+  background-image: url("../resources/backgroundImages/space-background.jpg");
+  filter: blur(0px);  
+  width:100%;
+  height:100%;
+  position: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  display:block;
+  background-size: cover;
+  margin-top: -850px;
+  z-index:-10;
+}

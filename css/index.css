@@ -261,10 +261,10 @@
    margin-left: 20px;
  }
 
- #backgroundImage{
-   background-image: url(resources/backgroundImages/space-background.jpg);
-   /* https://www.pexels.com/photo/planet-earth-220201/ */
-   filter: blur(5px);  
+/* https://www.pexels.com/photo/planet-earth-220201/ */
+#backgroundImage{
+   background-image: url("../resources/backgroundImages/space-background.jpg");
+   filter: blur(0px);  
    width:100%;
    height:100%;
    position: fixed;
@@ -272,6 +272,6 @@
    margin: 0;
    display:block;
    background-size: cover;
-   margin-top: -250px;
+   margin-top: -850px;
    z-index:-10;
 }

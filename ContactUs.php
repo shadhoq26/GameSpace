@@ -8,6 +8,4 @@
             </div>
         </div>
         <!-- background image for About page -->
-        <div id="backgroundImage3"> </div>
-    </body>
-</html>
+        <div id="backgroundImage"> </div>
