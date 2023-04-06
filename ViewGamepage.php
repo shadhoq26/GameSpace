@@ -81,25 +81,39 @@
                                 <?php
                                 if(isset($_GET["error"])){
                                     ?>
-                                    <p><?php echo $_GET["error"] ?> </p>
+                                    <p id=""><?php echo $_GET["error"] ?> </p>
                                     <?php
                                     
                                 }
                                 ?>
                             </div>
                         </form>
-
+                                <?php
+                                $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN game_review AS gr ON r.Review_ID=gr.Review_ID AND gr.game_ID=$gameID");
+                                $reviews=$reviews->fetchAll();
+                                for($i=0;$i<count($reviews);$i++){
+                                    $reviewID=$reviews[$i]["Review_ID"];
+                                    $account=$database->query("SELECT a.* FROM accounts AS a INNER JOIN review_owner AS ro ON a.UserID=ro.User_ID AND ro.Review_ID=$reviewID");
+                                    $account=$account->fetchObject();
+                                    $likes=$database->query("SELECT COUNT(Review_ID=$reviewID) AS reviewCount FROM likes ");
+                                    $likes=$likes->fetchObject();
+                                ?>
                         <div id="view-review-container">
-                            <h1><a href="viewprofilepage.php"> Account Name </a> </h1>
-                            
-                            <p> Game Name: </p>
-                            <p> Ratings: </p>
-                            <p> Likes:</p>
-                            <p> Description:</p> 
+                            <h1><a href="viewprofilepage.php"> <?php echo $account->Username?> </a> </h1> 
+                            <p> Game Name:<?php echo $game->Name ?> </p>
+                            <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
+                            <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                            <p> Likes:<?php echo $likes->reviewCount?></p>
+                            <form action="LikereviewScript.php" method="POST">
+                                <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
+                                <input type="hidden" name="pageID" value="<?php echo $gameID?>">
+                                <button type="submit"> Like </button>
+                            </form>
                         </div>
                     </div>          
                 </div>
-                <?php    
+                <?php 
+                                }   
             }else{
                 ?>
                 <p> Game not found </p>

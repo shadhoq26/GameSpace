@@ -1,7 +1,19 @@
 <?php
 session_start();
 include "database.php";
+
+
+if(!isset($_POST["id"])){
+    header("location: ViewGamepage.php?id=".$pageid."&error= page error");
+    exit();
+}
 $pageid=$_POST["id"];
+
+if(!isset($_SESSION["user"])){
+    header("location: ViewGamepage.php?id=".$pageid."&error= Sign Up/Login to like this game.");
+    exit();
+}
+
 $userID=$_SESSION["user"]->UserID;
 if(!isset($_POST["description"])){
     header("location: ViewGamepage.php?id=".$pageid."&error= Please enter a description for the review.");

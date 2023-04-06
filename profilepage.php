@@ -67,11 +67,11 @@
             </ul>
           </nav> 
           <div id="review-container">
-          <h1> Account Name </h1>
-          <p> Game Name: </p>
+          <h1> Game Name: </h1>
+          <p> Description:</p>
           <p> Ratings: </p>
           <p> Likes:</p>
-          <p> Description:</p>
+          <p> Disikes:</p>
           <button>Edit</button>
           </div>
         </div>

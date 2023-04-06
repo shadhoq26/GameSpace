@@ -59,6 +59,7 @@
         </div>
         <div class="right__col">
           <nav>
+          <button>Follow</button>
             <ul>
               <li><a href="">My Reviews</a></li>
               <li><a href="">Newest Reviews</a></li>
@@ -67,12 +68,11 @@
             </ul>
           </nav> 
           <div id="review-container">
-          <h1> Account Name </h1>
-          <p> Game Name: </p>
+          <div id="review-container">
+          <h1> Game Name: </h1>
+          <p> Description:</p>
           <p> Ratings: </p>
           <p> Likes:</p>
-          <p> Description:</p>
-          <button>Edit</button>
           </div>
         </div>
       </div>
