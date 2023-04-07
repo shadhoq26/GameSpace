@@ -5,7 +5,6 @@
 
 <div id="main3">
     <h1 id="top-game-title"> Top 10 Games </h1>
-    <p id="top-game-title2">(based on reviews)</p>
         <!--Will display The Top 10 rated games.  -->
         <div id= "block3-container">
             <div class="block3" onclick = "location.href=''" ><h1>1.</h1><img src = ""></div>
