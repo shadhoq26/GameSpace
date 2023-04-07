@@ -50,6 +50,7 @@
  }
 
  #top-game-title{
+   padding-top: 20px;
    text-align: center;
    font-size: 40px;
    color: rgb(255, 255, 255);
@@ -62,7 +63,7 @@
  }
 
  #backgroundImage{
-   background-image: url("../resources/backgroundImages/space-background.jpg");
+   background-image: url("../resources/backgroundImages/galaxy3.jpg");
    filter: blur(0px);  
    width:100%;
    height:100%;
@@ -71,6 +72,6 @@
    margin: 0;
    display:block;
    background-size: cover;
-   margin-top: -850px;
+   margin-top: -950px;
    z-index:-10;
 }

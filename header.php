@@ -17,14 +17,12 @@
                 <h1 id =  "title" >  GameSpace  </h1>
             </div>
                 <!-- Container for all the buttons -->
-                <div id = "container-for-buttons"> 
+                <div id= "container-for-buttons"> 
                     <a href ="index.php" class= "header-buttons"> Home</a>                    
                     <a href ="Top10Games.php" class= "header-buttons"> Top 10 Games</a>  
                     <a href ="Genre.php" class= "header-buttons"> Genre</a> 
-                    <a href ="ContactUs.php" class= "header-buttons"> About Us</a> 
-                                
-                <div id="login-button-container">
-                <!-- Changes the buttons to profile and logout or login and signup depending on if the user is logged in -->
+                    <a href ="ContactUs.php" class= "header-buttons"> About Us</a>
+                
                 <?php
                     if (isset($_SESSION['user'])) {
                 ?>
@@ -38,13 +36,16 @@
                     <?php
                     }
                 ?>
-                <div>
+                    
+
+
+                <div id= search-results-container>
                     <form action="searchResultspage.php" method="GET">
                         <input id="searchbar" name="search" type="text" placeholder="Enter game title..">
                         <input id="searchbutton" type= "submit" value="search">
                     </form>
-                </div>
-            </div>                        
+                </div>                    
+                                 
         </div>
     </div>
     

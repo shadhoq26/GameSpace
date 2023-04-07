@@ -1,6 +1,6 @@
 <?php include_once "header.php"?>
 <link rel= "Stylesheet" type= "text/css" href="css/loginpage.css"> -->
-<!-- https://www.codingnepalweb.com/login-form-with-floating-label-animation/ -->
+
 
 <html>
    <body>
@@ -37,5 +37,6 @@
             </div>
          </form>
       </div>
+      <div id="login-background-image"> </div>
    </body>  
 </html>

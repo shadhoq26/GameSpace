@@ -44,7 +44,7 @@ $searchResults = $searchResults->fetchAll();
     }
     ?> 
 </div> 
-<div id="backgroundImage"> </div>
+<div id="search-background"> </div>
 
 
 
