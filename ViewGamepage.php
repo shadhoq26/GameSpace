@@ -3,8 +3,6 @@
 
 <html>
     <body>
-        <div class="header__wrapper">
-            <header></header>
             <div class="main__container">
             <?php
             include "database.php";

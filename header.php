@@ -18,10 +18,10 @@
             </div>
                 <!-- Container for all the buttons -->
                 <div id= "container-for-buttons"> 
-                    <a href ="index.php" class= "header-buttons"> Home</a>                    
-                    <a href ="Top10Games.php" class= "header-buttons"> Top 10 Games</a>  
+                    <a href ="index.php" class= "header-buttons"> Home</a>                      
                     <a href ="Genre.php" class= "header-buttons"> Genre</a> 
                     <a href ="ContactUs.php" class= "header-buttons"> About Us</a>
+                    <a href ="Top10Games.php" class= "header-buttons"> Top 10 Games</a> 
                 
                 <?php
                     if (isset($_SESSION['user'])) {
