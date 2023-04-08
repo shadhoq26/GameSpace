@@ -39,7 +39,8 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="bottom__container">
+                    <div class="bottom-container">           
+                        <form id="reviewbox" action="makereview.php" method="post">
                         <nav>
                             <ul>
                                 <li><a href="">Sort by Newest</a></li>
@@ -47,8 +48,7 @@
                                 <li><a href="">Sort by Highest Reviews</a></li>
                                 <li><a href="">Sort By Lowest Reviews</a></li>
                             </ul>
-                        </nav> 
-                        <form id="reviewbox" action="makereview.php" method="post">
+                        </nav>
                             <h1> Write your review </h1>
                             <input type="text" name="description" placeholder="test">
                             <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
@@ -90,11 +90,11 @@
                                     $reviewID=$reviews[$i]["Review_ID"];
                                     $account=$database->query("SELECT a.* FROM accounts AS a INNER JOIN review_owner AS ro ON a.UserID=ro.User_ID AND ro.Review_ID=$reviewID");
                                     $account=$account->fetchObject();
-                                    $likes=$database->query("SELECT COUNT(Review_ID=$reviewID) AS reviewCount FROM likes ");
+                                    $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
                                     $likes=$likes->fetchObject();
                                 ?>
                         <div id="view-review-container">
-                            <h1><a href="viewprofilepage.php"> <?php echo $account->Username?> </a> </h1> 
+                            <h1><a href="viewprofilepage.php?pageid=<?php echo $gameID?>&user=<?php echo $account->Username?>"><?php echo $account->Username?></a></h1> 
                             <p> Game Name:<?php echo $game->Name ?> </p>
                             <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
                             <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>

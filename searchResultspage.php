@@ -3,6 +3,10 @@
 
 <?php 
 include "database.php";
+if(!isset($_GET["search"])){
+    header("location:index.php");
+    exit();
+}
 $searchText= $_GET["search"];
 $searchSQL ="SELECT * FROM games WHERE Name LIKE '%$searchText%' OR 
     Genre LIKE '%$searchText%' OR
@@ -16,7 +20,7 @@ $searchResults = $searchResults->fetchAll();
 ?>
 <div id="box-container2">
     <?php
-    if(count($searchResults)>0){
+    if(count($searchResults)>0 && !empty($searchText)){
         for($i=0; $i<count($searchResults);$i++){
         $url= "ViewGamepage.php?id=".$searchResults[$i]["game_ID"];
         ?>

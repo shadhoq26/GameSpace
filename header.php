@@ -4,6 +4,7 @@
 
 <html>
     <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
         <title> GameSpace </title>
         <link rel= "Stylesheet" type= "text/css" href = "css/index.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -42,10 +43,9 @@
                 <div id= search-results-container>
                     <form action="searchResultspage.php" method="GET">
                         <input id="searchbar" name="search" type="text" placeholder="Enter game title..">
-                        <input id="searchbutton" type= "submit" value="search">
+                        <button id="searchbutton" type= "submit" value="search"><span class="material-symbols-outlined">search</span></button>
                     </form>
-                </div>                    
-                                 
+                </div>                                           
         </div>
     </div>
     

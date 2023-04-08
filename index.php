@@ -7,8 +7,7 @@
                     <!-- <div id="first-box"><h1 class="boxText">Automatic Slideshow</h1></div> -->
                     <head>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Auto slideshow</title>
-                        
+                        <title>Auto slideshow</title>    
                     </head>
                         <body>
                         <div id= "first-box">
@@ -17,8 +16,7 @@
                                 <img src="resources/slideshowimages/forzapic.jpg"> 
                                 <img src="resources/slideshowimages/hogwarts-legacy-image.jpg">
                                 <img src="resources/slideshowimages/Little-night-image.jpg">
-                                <img src="resources/slideshowimages/starwarsimage2.jpg"> 
-                                                     
+                                <img src="resources/slideshowimages/starwarsimage2.jpg">                         
                             </div>
                         </div>
                     </div>

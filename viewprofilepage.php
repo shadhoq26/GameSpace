@@ -3,6 +3,33 @@
 <link rel= "Stylesheet" type= "text/css" href="css/profilepage.css">
 
 <html>
+  <?php
+  include "database.php";
+  if(!isset($_GET["pageid"])){
+    header("location: index.php");
+    exit();
+  }
+
+  $pageid=trim($_GET["pageid"]);
+  
+
+  if(!isset($_GET["user"])){
+    header("location: Viewgamepage.php?id=$pageid");
+    exit();
+  }
+
+  $username=trim($_GET["user"]);
+  $userdata=$database->query("SELECT * FROM accounts WHERE Username='$username'");
+  if($userdata->rowCount()==1){
+    $userdata=$userdata->fetchObject();
+
+  }else{
+    header("location: Viewgamepage.php?id=$pageid");
+    exit();
+  }
+  ?>
+  
+  
   <body>
     <div class="header__wrapper">
       <header></header>
@@ -11,10 +38,10 @@
           <div class="img__container">
             <img src="resources/bg.jpeg"/>
           </div>
-          <h2> <?=$_SESSION['user']->Username?></h2>   
-          <p>First Name: <?=$_SESSION['user']->First_Name?></p>
-          <p>Last Name: <?=$_SESSION['user']->Last_Name?></p>
-          <p>Email: <?=$_SESSION['user']->Email?></p> 
+          <h2> <?=$userdata->Username?></h2>   
+          <p>First Name: <?=$userdata->First_Name?></p>
+          <p>Last Name: <?=$userdata->Last_Name?></p>
+          <p>Email: <?=$userdata->Email?></p> 
 
           <ul class="about">
             <li><span>4,073</span>Followers</li>
