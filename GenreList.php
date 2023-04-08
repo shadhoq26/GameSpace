@@ -29,7 +29,7 @@ $searchResults = $searchResults->fetchAll();
         </div>
         <span class="divider"></span>
         <div id="search-rating-box">
-            <p>Rating: 7/10</p>
+            <h1>Rating: 7/10</h1>
         </div>
     </div>
     <?php

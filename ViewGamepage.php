@@ -3,7 +3,7 @@
 
 <html>
     <body>
-            <div class="main__container">
+            <div id="main">
             <?php
             include "database.php";
             if(isset($_GET["id"])){
@@ -13,11 +13,9 @@
                     $game=$results->fetchObject();
                 }
                 ?> 
-                <div class="top__container">
-                    <div class="img__container">
-                    </div>
-                    <div id="view-game-container">
-                        <div id="view-image-container">
+                <div class="box-container">
+                    <div id="first-container">
+                        <div>
                             <img src="resources/GameImages/<?php echo $game-> Cover_Image?>"/>
                         </div>
                         <h1> <?php echo $game-> Name;?> </h1>
@@ -30,7 +28,7 @@
                         <a href="<?php echo $game-> Purchase_Link;?>"> Buy Now </a> 
                     </div>
 
-                    <div id="view-rating-container">
+                    <div id="second-container">
                         <h1> Rating: </h1>
                         <p> Rating Breakdown </p>
                         <div class="rating-breakdown-container">
@@ -80,8 +78,7 @@
                                 if(isset($_GET["error"])){
                                     ?>
                                     <p id=""><?php echo $_GET["error"] ?> </p>
-                                    <?php
-                                    
+                                    <?php             
                                 }
                                 ?>
                             </div>

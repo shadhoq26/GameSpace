@@ -14,10 +14,11 @@
                         <div id= "first-box">
                          <div class="slide-container">
                             <div class="slide-wrapper">
-                                <img src="resources/backgroundImages/deep-space.jpg">
-                                <img src="resources/backgroundImages/galaxy4.jpg">
-                                <img src="resources/backgroundImages/telescope1.jpg">
-                                <img src="resources/backgroundImages/galaxy3.jpg">                      
+                                <img src="resources/slideshowimages/forzapic.jpg"> 
+                                <img src="resources/slideshowimages/hogwarts-legacy-image.jpg">
+                                <img src="resources/slideshowimages/Little-night-image.jpg">
+                                <img src="resources/slideshowimages/starwarsimage2.jpg"> 
+                                                     
                             </div>
                         </div>
                     </div>

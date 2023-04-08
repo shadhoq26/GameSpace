@@ -31,8 +31,8 @@ $searchResults = $searchResults->fetchAll();
                 <p>Price: <?php echo $searchResults[$i]["Price"] ?></p>
             </div>
             <span class="divider"></span>
-            <div id="search-rating-box" >   
-                <p>Rating: 7/10</p>
+            <div id="search-rating-box">   
+                <h1>Rating: 7/10</h1>
             </div> 
         </div>
         <?php

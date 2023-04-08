@@ -49,9 +49,9 @@
  }
  .header-buttons{
    font-family: monospace;
-   color: rgb(252, 222, 248);
+   color: rgb(255, 255, 255);
    background-color:rgba(255, 255, 255, 0);
-   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
    font-size: 20px;
    width: 164px;
    height: 20px;
@@ -218,7 +218,7 @@
    justify-content: center;
 }
 
-#under-image-container {
+/* #under-image-container {
    margin-top: 20px;
    margin-left:5px;
    margin-right: 5px;
@@ -226,7 +226,7 @@
    height: 170px;
    overflow: hidden;
    justify-content: center;
-}
+} */
 
 #middle-image-container img {
    width: 166px;
@@ -253,14 +253,15 @@
    width: 82px;
    height: 20px;
    font-family: monospace;
-   color: rgb(255, 236, 252);
+   color: rgb(255, 255, 255);
    background-color:rgba(255, 255, 255, 0);
    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
    font-size: 20px;
    margin-left: 10px;
    padding: 25px;
    text-decoration: none;
-   border-radius: 5px;   
+   border-radius: 5px; 
+   font-weight: bold;  
 }
 
  #GameSpaceLogo {
@@ -287,9 +288,9 @@
  }
 
 #searchbutton{
-   width: 100px;
+   width: 64px;
    height: 25px;
-   margin-left: -108px;
+   margin-left: -72px;
    border-radius: 5px;
    border-color: #000000;
    color:rgb(0, 0, 0)
@@ -324,7 +325,8 @@
    box-shadow: rgba(4, 4, 22, 0.3) 10px 25px 30px;
 }
 .slide-wrapper{
-   width: 100%;
+   width: 1000px;
+   height: 550px;
    display: flex;
    animation: slide 16s infinite;
 }
@@ -354,6 +356,6 @@
        transform: translateX(-300%);
    }
 }
-img{
+/* img{
    width: 100%;
-}
+} */

@@ -50,9 +50,11 @@
    justify-content: center;
 }
 
-#search-rating-box p{
+#search-rating-box h1{
    font-size: 25px;
    text-align: right;
+   color: white;
+   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 }
 
 #search-image-container{
