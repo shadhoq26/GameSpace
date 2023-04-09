@@ -27,9 +27,7 @@
     header("location: Viewgamepage.php?id=$pageid");
     exit();
   }
-  ?>
-  
-  
+  ?> 
   <body>
     <div class="header__wrapper">
       <header></header>
