@@ -88,6 +88,25 @@
   align-items: center;
 }
 
+#first-container img{
+  width: 240px;
+  height: 290px;
+  margin-left: -20px;
+  border-radius: 9px;
+}
+
+#first-container h1{
+  margin-top: -244px;
+  margin-left: 20px;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+}
+
+#first-container p{
+  margin-left: 30px;
+  padding-top: 20px;
+  text-align: left;
+}
 
 #second-container{
   width: 50%;

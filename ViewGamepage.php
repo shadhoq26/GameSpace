@@ -23,8 +23,7 @@
                         <p> Genre:<?php echo $game-> Genre;?> </p>
                         <p> Platform:<?php echo $game-> Platform;?></p>
                         <p> Age Rating:<?php echo $game-> Age_Rating;?></p>
-                        <hr>
-                        <p> <?php echo $game-> Information;?></p>
+                        <!-- <p> <?php echo $game-> Information;?></p> -->
                         <a href="<?php echo $game-> Purchase_Link;?>"> Buy Now </a> 
                     </div>
                     <div id="second-container">

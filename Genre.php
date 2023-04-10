@@ -10,7 +10,7 @@
             <div class="block2" onclick = "location.href='GenreList.php?genre=Sports'" ><h1>Sports</h1><img src = "resources/genre images/sports.jpg"></div>
             <div class="block2" onclick = "location.href='GenreList.php?genre=Multiplayer'" ><h1>Multiplayer</h1><img src = "resources/genre images/multiplayer2.jpg"></div>
             <div class="block2" onclick = "location.href='GenreList.php?genre=Adventure'" ><h1>Adventure</h1><img src = "resources/genre images/adventure.png"></div>   
-            <div class="block2" onclick = "location.href='GenreList.php?genre=Action'" ><h1>Fighting</h1><img src = "resources/genre images/fighting2.jpg"></div>
+            <div class="block2" onclick = "location.href='GenreList.php?genre=Action'" ><h1>Action</h1><img src = "resources/genre images/fighting2.jpg"></div>
             <div class="block2" onclick = "location.href='GenreList.php?genre=Puzzle'"><h1>Puzzle</h1><img src = "resources/genre images/puzzle.jpg"></div>
             <div class="block2" onclick = "location.href='GenreList.php?genre=VR'" ><h1>Virtual Reality</h1><img src = "resources/genre images/vr.jpg"></div>
             <div class="block2" onclick = "location.href='GenreList.php?genre=Racing'" ><h1>Racing</h1><img src = "resources/genre images/racing.jpg"></div>
