@@ -16,8 +16,8 @@
                          <div class="slide-container">
                             <div class="slide-wrapper">
                                 <img src="resources/slideshowimages/forzapic.jpg"> 
+                                <img src="resources/slideshowimages/eldenring.jpg">
                                 <img src="resources/slideshowimages/hogwarts-legacy-image.jpg">
-                                <img src="resources/slideshowimages/Little-night-image.jpg">
                                 <img src="resources/slideshowimages/starwarsimage2.jpg">                         
                             </div>
                         </div>
