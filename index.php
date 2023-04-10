@@ -46,18 +46,18 @@
                 <h1 id="indextitle"> New releases </h1>
                 
                 <div id= "block3-container">
-            <div class="block3" onclick = "location.href='ViewGamepage.php?id=1'" ><h1></h1><img src = "resources/GameImages/reddead2image.jpg"></div>
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/jedisurvivor.jpg"></div>
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/forspoken.jpeg"></div>
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/deadisland2.jpg"></div>
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/residentevil4.jpg"></div>   
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/lastofus1.jpg"></div>
-            <div class="block3" onclick = "location.href="><h1></h1><img src = "resources/GameImages/hogwarts.jpg"></div>
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/MinecraftLegends.jpg"></div>
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/sims4.jpg"></div>
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/wolung.jpg"></div> 
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/atomicheart.jpg"></div>  
-            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/wwe23.jpg"></div>          
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=13'" ><h1></h1><img src = "resources/GameImages/jedisurvivor.jpg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=14'" ><h1></h1><img src = "resources/GameImages/forspoken.jpeg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=15'" ><h1></h1><img src = "resources/GameImages/deadisland2.jpg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=5'" ><h1></h1><img src = "resources/GameImages/residentevil4.jpg"></div>   
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=6'" ><h1></h1><img src = "resources/GameImages/lastofus1.jpg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=7'"><h1></h1><img src = "resources/GameImages/hogwarts.jpg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=8'" ><h1></h1><img src = "resources/GameImages/MinecraftLegends.jpg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=9'" ><h1></h1><img src = "resources/GameImages/sims4.jpg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=10'" ><h1></h1><img src = "resources/GameImages/wolung.jpg"></div>
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=16'" ><h1></h1><img src = "resources/GameImages/sonsof.jpg"></div> 
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=11'" ><h1></h1><img src = "resources/GameImages/atomicheart.jpg"></div>  
+            <div class="block3"  onclick = "location.href='ViewGamepage.php?id=12'" ><h1></h1><img src = "resources/GameImages/wwe23.jpg"></div>          
         </div>   
     </div>
         </div> 
