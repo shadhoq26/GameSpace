@@ -27,7 +27,6 @@
                         <p> <?php echo $game-> Information;?></p>
                         <a href="<?php echo $game-> Purchase_Link;?>"> Buy Now </a> 
                     </div>
-
                     <div id="second-container">
                         <h1> Rating: </h1>
                         <p> Rating Breakdown </p>
@@ -41,14 +40,6 @@
                     </div> 
                     <div class="bottom-container">           
                         <form id="reviewbox" action="makereview.php" method="post">
-                        <nav>
-                            <ul>
-                                <li><a href="">Sort by Newest</a></li>
-                                <li><a href="">Sort by Oldest</a></li>
-                                <li><a href="">Sort by Highest Reviews</a></li>
-                                <li><a href="">Sort By Lowest Reviews</a></li>
-                            </ul>
-                        </nav>
                             <h1> Write your review </h1>
                             <input type="text" name="description" placeholder="test">
                             <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">

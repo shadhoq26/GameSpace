@@ -42,8 +42,9 @@
 
                 <div id= search-results-container>
                     <form action="searchResultspage.php" method="GET">
-                        <input id="searchbar" name="search" type="text" placeholder="Enter game title..">
-                        <button id="searchbutton" type= "submit" value="search"><span class="material-symbols-outlined">search</span></button>
+                        <input id="searchbar" name="search" type="text" placeholder="Search">
+                        <input id="searchbutton" type= "submit" value="Submit">
+                        <!-- <button id="searchbutton" type= "submit" value="search"><span class="material-symbols-outlined">search</span></button> -->
                     </form>
                 </div>                                           
         </div>

@@ -36,4 +36,4 @@ $searchResults = $searchResults->fetchAll();
     }
     ?> 
 </div> 
-<div id="genre-list-backgroundImage"></div>
+<!-- <div id="genre-list-backgroundImage"></div> -->

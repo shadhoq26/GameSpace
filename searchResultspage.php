@@ -43,12 +43,13 @@ $searchResults = $searchResults->fetchAll();
         }
     }else{
         ?>
-        <p> No search results found, try again.</p>
+        <p id="searchresultstext"> No search results found, please try again.</p>
         <?php
     }
     ?> 
-</div> 
-<div id="search-background"> </div>
+</div>
+</div>
+<!-- <div id="search-background"> </div> -->
 
 
 

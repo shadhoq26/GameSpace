@@ -1,5 +1,7 @@
 <?php include_once "header.php"?>
 <link rel= "Stylesheet" type= "text/css" href="css/index.css">
+<link rel= "Stylesheet" type= "text/css" href="css/gamebox.css">
+
         <div id="main">
         
             <div id="box-container">
@@ -22,7 +24,7 @@
                     </div>
                     <div id="second-container">
                     <div id="second-box" onclick="location.href='Community.php'"><h1 class="boxText">Community</h1></div>
-                    <div id="second-box" onclick="location.href='News.php'"><h1 class="boxText">News</h1></div>
+                    <div id="third-box" onclick="location.href='News.php'"><h1 class="boxText">News</h1></div>
                 </div>
                        <!-- Images that will be displayed under the boxes -->
             <!-- <div id="middle-image-container">
@@ -37,8 +39,27 @@
                 <img src="imagesweb/index8.jpg"> 
                 <img src="imagesweb/index8.jpg">
                 <img src="imagesweb/index8.jpg">  -->
-            </div>
+            <!-- </div> -->
             </div> 
+
+            <div id="main3">
+                <h1 id="indextitle"> New releases </h1>
+                
+                <div id= "block3-container">
+            <div class="block3" onclick = "location.href='ViewGamepage.php?id=1'" ><h1></h1><img src = "resources/GameImages/reddead2image.jpg"></div>
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/jedisurvivor.jpg"></div>
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/forspoken.jpeg"></div>
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/deadisland2.jpg"></div>
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/residentevil4.jpg"></div>   
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/lastofus1.jpg"></div>
+            <div class="block3" onclick = "location.href="><h1></h1><img src = "resources/GameImages/hogwarts.jpg"></div>
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/MinecraftLegends.jpg"></div>
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/sims4.jpg"></div>
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/wolung.jpg"></div> 
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/atomicheart.jpg"></div>  
+            <div class="block3" onclick = "location.href=" ><h1></h1><img src = "resources/GameImages/wwe23.jpg"></div>          
+        </div>   
+    </div>
         </div> 
         <div id="backgroundImage"> </div>  
     </body>
