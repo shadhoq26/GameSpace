@@ -25,8 +25,15 @@
                         </div>
                         
                         <div id="second-container">
+                        <div id="third-box"> 
+                    
+                        <img src="resources/slideshowimages/starwarsimage2.jpg">                 
+                            <h1>News</h1>
+                            <h2> Test </h2>
+                            <p> test</p>
+                        </div>
                         <div id="second-box" onclick="location.href='Community.php'"><h1 class="boxText">Community</h1></div>
-                        <div id="third-box" onclick="location.href='News.php'"><h1 class="boxText">News</h1></div>
+                        
                     </div>
                 </div>
             </div> 

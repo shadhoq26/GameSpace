@@ -1,0 +1,39 @@
+#textContainer2{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+ }
+ 
+ #textInnerContainer2{
+    height: 550px;
+    width: 60%;
+    background:linear-gradient(#e86fe0, #788ae8);
+    margin-top: 216px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid black;
+} 
+ 
+ #textInnerContainer2 h1{
+    color: white;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+}
+ 
+ #textInnerContainer2 img{
+    height: 50%;
+}
+
+#community-background-image{
+   background-image: url("../resources/backgroundImages/galaxy3.jpg");
+   filter: blur(0px);  
+   width:100%;
+   height:100%;
+   position: fixed;
+   background-repeat: repeat-x;
+
+   margin: 0;
+   display:block;
+   background-size: cover;
+   margin-top: -640px;
+   z-index:-10;
+ }

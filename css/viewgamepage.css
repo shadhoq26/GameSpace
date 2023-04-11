@@ -291,6 +291,7 @@
   background-color: rgb(213, 135, 222);
 }
 
+
 #backgroundImage{
   background-image: url("../resources/backgroundImages/space-background.jpg");
   filter: blur(0px);  

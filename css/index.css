@@ -149,7 +149,7 @@
 }
 
 #first-box{
-   width: 65%;
+   width: 55%;
    height: 100%;
    /* background:linear-gradient(#c850c0, #4158d0); */
    float: Left;
@@ -173,31 +173,29 @@
 }
 
 #second-box{
-   width: 16%;
-   height: 92%;
-   background:rgb(133, 34, 142);
-   float: Left;
-   border-radius: 3px;
+   width: 42%;
+   height: 30%;
+   background: rgb(133, 34, 142);
+   float: left;
    box-sizing: border-box;
-   border: solid rgb(255, 255, 255) 2.5px;
-   transition: 0.2 ease-in-out;
-   display:flex;
+   display: flex;
    flex-wrap: wrap;
    justify-content: center;
    font-size: 20px;
    align-items: center;
-   margin-left: -90px;
-   margin-top: 45px;
-   border: 8px solid;
-   border-image: linear-gradient(#c850c0, #4158d0);
-   border-image-slice: 1;
+   
+   margin-top: 44px;
+   border-width: 8px;
+   border-style: solid;
+   border-color: initial;
+   border-image: linear-gradient(rgb(200, 80, 192), rgb(65, 88, 208)) 1 / 1 / 0 stretch;
    border-radius: 12px;
    box-shadow: rgba(4, 4, 22, 0.3) 10px 25px 30px;
 }
 
 #third-box{
-   width: 16%;
-   height: 92%;
+   width: 42%;
+   height: 55%;
    background:rgb(133, 34, 142);
    float: Left;
    border-radius: 3px;
@@ -209,7 +207,7 @@
    justify-content: center;
    font-size: 20px;
    align-items: center;
-   margin-left: 55px;
+   margin-left: 0px;
    margin-top: 45px;
    border: 8px solid;
    border-image: linear-gradient(#c850c0, #4158d0);
@@ -218,11 +216,39 @@
    box-shadow: rgba(4, 4, 22, 0.3) 10px 25px 30px;
 }
 
-#third-box:hover{
+#third-box img{
+   width: 50%;
+   height: 80%;
+   margin-left: -294px;
+   margin-top: -13px;
+   border-radius: 3px;
+}
+ 
+ #third-box h1{
+   margin-top: -200px;
+   margin-left: 31px;
+   margin-left: 24px;
+   color: white;
+   text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px;
+}
+
+ #third-box h2{
+   margin-top: -94px;
+    margin-left: -100px;
+    color: rgb(0, 0, 0);
+}
+ 
+ #third-box p{
+   margin-left: -50px;
+    padding-top: 8px;
+    padding-top: 4px;
+    text-align: left;
+}
+/* #third-box:hover{
    background-color:rgb(216, 176, 241);
    cursor: pointer; 
    transition: 0.2s ease-in-out;  
-}
+} */
 
 /* #first-box:hover{
    background-color:rgb(0, 0, 0);
