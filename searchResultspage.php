@@ -16,9 +16,8 @@ $searchSQL ="SELECT * FROM games WHERE Name LIKE '%$searchText%' OR
  
 $searchResults = $database->query($searchSQL);
 $searchResults = $searchResults->fetchAll();
-
-
 ?>
+
 <div id="box-container2">
     <?php
     if(count($searchResults)>0 && !empty($searchText)){

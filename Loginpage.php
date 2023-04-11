@@ -20,22 +20,22 @@
             <div class="field">
                <input type="submit" value="Login">
             </div>
-            <div class="signup-link">
-               Don't have an account ? <a href="SignUppage.php">Sign Up now</a>
-               <?php
-               // If any errors occurs when logging in an error box will appear telling you what the error is.
-               if (isset($_GET['e'])) {
-                ?>
-                <div id="errorOuterContainer">
-                <div id="errorInnerCountainer">
-                    <p id="error2"><?=$_GET['e']?></p>
-                </div>
-            </div>
+            <div class="signup-link"> Don't have an account ? <a href="SignUppage.php">Sign Up now</a>
             <?php
-            }
-            ?>
-            </div>
-         </form>
+            // If any errors occurs when logging in an error box will appear telling you what the error is.
+            if (isset($_GET['e'])) {
+               ?>
+               <div id="errorOuterContainer">
+                  <div id="errorInnerCountainer">
+                     <p id="error2"><?=$_GET['e']?></p>
+                  </div>
+               </div>
+               <?php
+               }
+               ?>
+               </div>
+            </form>
+         </div>
       </div>
       <div id="login-background-image"> </div>
    </body>  

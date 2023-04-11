@@ -32,9 +32,48 @@
                     </div>
                     <div id="second-container">
                         <h1> Rating: <?php echo $average;?></h1>
-                        <p> Rating Breakdown </p>
                         <div class="rating-breakdown-bar">
-                            <p> 10 (22) </p>
+                            <table>
+                                <tr>
+                                    <th style="width:20%"> Ratings</th>
+                                    <th style="width:70%"> Bar</th>
+                                </tr>      
+                                <tr>
+                                <td>10</td>
+                                <td>bar</td>
+                                </tr>
+                                <td>9</td>
+                                <td>bar</td>
+                                <tr>
+                                <td>8</td>
+                                <td>bar</td>
+                                </tr>
+                                <td>7</td>
+                                <td>bar</td>
+                                <tr>
+                                <td>6</td>
+                                <td>bar</td>
+                                </tr>
+                                <td>5</td>
+                                <td>bar</td>
+                                <tr>
+                                <td>4</td>
+                                <td>bar</td>
+                                </tr>
+                                <tr>
+                                <td>3</td>
+                                <td>bar</td>
+                                </tr>
+                                <tr>
+                                <td>2</td>
+                                <td>bar</td>
+                                </tr>
+                                <tr>
+                                <td>1</td>
+                                <td>bar</td>
+                                </tr>
+                            </table>
+                            
                             <div id="rating-bar-percentage">
                             </div>
                         </div>
@@ -79,7 +118,6 @@
                                         <input type="submit" value="Submit Review">
                                     </div>
                             </form>
-                            
                                 <?php
                                 $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN game_review AS gr ON r.Review_ID=gr.Review_ID AND gr.game_ID=$gameID");
                                 $reviews=$reviews->fetchAll();

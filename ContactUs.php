@@ -3,7 +3,7 @@
 
 
  <!-- This is where the text for the About page will be entered as well as a image below it.  -->
-<div id="textContainer2">
+ <div id="textContainer2">
             <div id="textInnerContainer2">
                 <h1> About Us </h1> <br>
                 <p> 
@@ -17,10 +17,10 @@
                 social, friendly environment for users to share their opinions and 
                 comment on other user’s opinions on game of their choice.
             </p> 
-                <br>
-                <p> ok</p>
-                <img id= "contactImage" src="resources/profilephoto.jpg">
+            <br>
+            <p> ok</p>
+            <img id= "contactImage" src="resources/profilephoto.jpg">
             </div>
         </div>
         <!-- background image for About page -->
-<div id="contact-background-image"> </div>
+        <div id="contact-background-image"> </div>
