@@ -3,7 +3,7 @@
 
 <html>
     <body>
-            <div id="main">
+        <div id="main">
             <?php
             include "database.php";
             if(isset($_GET["id"])){
@@ -12,36 +12,40 @@
                 if($results->rowCount()==1){
                     $game=$results->fetchObject();
                 }
+                include "average-score-script.php";
+                $average= getAverage($gameID);
                 ?> 
                 <div class="box-container">
                     <div id="first-container">
                         <div>
                             <img src="resources/GameImages/<?php echo $game-> Cover_Image?>"/>
                         </div>
-                        <h1> <?php echo $game-> Name;?> </h1>
-                        <p> Price:<?php echo $game-> Price;?></p>
-                        <p> Genre:<?php echo $game-> Genre;?> </p>
-                        <p> Platform:<?php echo $game-> Platform;?></p>
-                        <p> Age Rating:<?php echo $game-> Age_Rating;?></p>
-                        <!-- <p> <?php echo $game-> Information;?></p> -->
-                        <a href="<?php echo $game-> Purchase_Link;?>"> Buy Now </a> 
+                        <div id="first-text-container">
+                            <h1> <?php echo $game-> Name;?> </h1>
+                            <p>Price: <?php echo $game-> Price;?></p>
+                            <p>Genre: <?php echo $game-> Genre;?> </p>
+                            <p>Platform: <?php echo $game-> Platform;?></p>
+                            <p>Age Rating: <?php echo $game-> Age_Rating;?></p>
+                            <p> <?php echo $game-> Information;?></p>
+                        </div>
+                        <a href="<?php echo $game-> Purchase_Link;?>"> Buy Now </a>  
                     </div>
                     <div id="second-container">
-                        <h1> Rating: </h1>
+                        <h1> Rating: <?php echo $average;?></h1>
                         <p> Rating Breakdown </p>
-                        <div class="rating-breakdown-container">
+                        <div class="rating-breakdown-bar">
                             <p> 10 (22) </p>
-                            <div class="rating-breakdown-bar">
-                                <div id="rating-bar-percentage">
-                                </div>
+                            <div id="rating-bar-percentage">
                             </div>
                         </div>
                     </div> 
-                    <div class="bottom-container">           
+                    <div class="bottom-container">
+                    <div id="contain-all-review">           
                         <form id="reviewbox" action="makereview.php" method="post">
                             <h1> Write your review </h1>
-                            <input type="text" name="description" placeholder="test">
+                            <input type="text" name="description" placeholder="Write review here">
                             <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
+                            <h3> Choose a rating </h3>
                             <div class="radio_container">
                                 <input type="radio" name="rating" value="1" id="rating1">
                                 <label for="rating1">1</label>
@@ -61,18 +65,21 @@
                                 <label for="rating8">8</label>
                                 <input type="radio" name="rating" value="9" id="rating9">
                                 <label for="rating9">9</label>
-                                <input type="radio" name="rating" value="9" id="rating10">
-                                <label for="rating10">10</label>
-                                <input type="submit" value="Submit Review">
+                                <input type="radio" name="rating" value="10" id="rating10">
+                                <label for="rating10">10</label>                               
                                 <?php
                                 if(isset($_GET["error"])){
                                     ?>
                                     <p id=""><?php echo $_GET["error"] ?> </p>
                                     <?php             
-                                }
-                                ?>
-                            </div>
-                        </form>
+                                    }
+                                    ?>
+                                    </div>
+                                    <div class="submit_container">
+                                        <input type="submit" value="Submit Review">
+                                    </div>
+                            </form>
+                            
                                 <?php
                                 $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN game_review AS gr ON r.Review_ID=gr.Review_ID AND gr.game_ID=$gameID");
                                 $reviews=$reviews->fetchAll();
@@ -82,31 +89,42 @@
                                     $account=$account->fetchObject();
                                     $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
                                     $likes=$likes->fetchObject();
-                                ?>
-                        <div id="view-review-container">
-                            <h1><a href="viewprofilepage.php?pageid=<?php echo $gameID?>&user=<?php echo $account->Username?>"><?php echo $account->Username?></a></h1> 
-                            <p> Game Name:<?php echo $game->Name ?> </p>
-                            <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
-                            <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                            <p> Likes:<?php echo $likes->reviewCount?></p>
-                            <form action="LikereviewScript.php" method="POST">
-                                <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
-                                <input type="hidden" name="pageID" value="<?php echo $gameID?>">
-                                <button type="submit"> Like </button>
-                            </form>
-                        </div>
-                    </div>          
-                </div>
-                <?php 
+                                    
+                                    if($account->UserID==$_SESSION["user"]->UserID){
+                                        $profileLink="profilepage.php";
+                                    }else{
+                                        $profileLink="viewprofilepage.php?pageid=".$gameID."&user=".$account->Username;
+                                    }
+                                    ?>
+                                    <div id="view-review-container">
+                                        <div id="view-review-box">
+                                            <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
+                                            <p> Game Name:<?php echo $game->Name ?> </p>
+                                            <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
+                                            <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                                            <p> Likes:<?php echo $likes->reviewCount?></p>
+                                            <form action="LikereviewScript.php" method="POST">
+                                                <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
+                                                <input type="hidden" name="pageID" value="<?php echo $gameID?>">
+                                                <button type="submit"> Like </button>
+                                            </form>
+                                        </div>
+                                    </div>          
+                                <?php 
                                 }   
-            }else{
-                ?>
-                <p> Game not found </p>
-                <?php
-            }
-            ?>
-            </div>
-        </div>
-        <div id="backgroundImage"> </div>
+                            }else{
+                                ?>
+                                <p> Game not found </p>
+                                <?php
+                            }
+                            ?>
+                            </div>
+                        </div>
+                        <div id="backgroundImage"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div>            
     </body>
 </html>

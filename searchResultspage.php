@@ -3,6 +3,7 @@
 
 <?php 
 include "database.php";
+include "average-score-script.php";
 if(!isset($_GET["search"])){
     header("location:index.php");
     exit();
@@ -23,6 +24,8 @@ $searchResults = $searchResults->fetchAll();
     if(count($searchResults)>0 && !empty($searchText)){
         for($i=0; $i<count($searchResults);$i++){
         $url= "ViewGamepage.php?id=".$searchResults[$i]["game_ID"];
+        
+        $average= getAverage($searchResults[$i]["game_ID"]);
         ?>
         <div id="first-box2" onclick="location.href='<?php echo $url ?>'">
             <div id="search-image-container">
@@ -36,7 +39,7 @@ $searchResults = $searchResults->fetchAll();
             </div>
             <span class="divider"></span>
             <div id="search-rating-box">   
-                <h1>Rating: 7/10</h1>
+                <h1><?php echo $average;?></h1>
             </div> 
         </div>
         <?php
