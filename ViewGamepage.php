@@ -14,6 +14,8 @@
                 }
                 include "average-score-script.php";
                 $average= getAverage($gameID);
+                $breakdown= getAverageBreakdown($gameID);
+                
                 ?> 
                 <div class="box-container">
                     <div id="first-container">
@@ -35,42 +37,42 @@
                         <div class="rating-breakdown-bar">
                             <table>
                                 <tr>
-                                    <th style="width:20%"> Ratings</th>
-                                    <th style="width:70%"> Bar</th>
+                                    <th style="width:10%"> Ratings</th>
+                                    <th style="width:80%"></th>
                                 </tr>      
                                 <tr>
-                                <td>10</td>
-                                <td>bar</td>
+                                <td>10 (<?php echo $breakdown[9] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[9]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
-                                <td>9</td>
-                                <td>bar</td>
+                                <td>&nbsp; 9 (<?php echo $breakdown[8] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[8]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 <tr>
-                                <td>8</td>
-                                <td>bar</td>
+                                <td>&nbsp; 8 (<?php echo $breakdown[7] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[7]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
-                                <td>7</td>
-                                <td>bar</td>
+                                <td>&nbsp; 7 (<?php echo $breakdown[6] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[6]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 <tr>
-                                <td>6</td>
-                                <td>bar</td>
+                                <td>&nbsp; 6 (<?php echo $breakdown[5] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[5]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
-                                <td>5</td>
-                                <td>bar</td>
+                                <td>&nbsp; 5 (<?php echo $breakdown[4] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[4]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 <tr>
-                                <td>4</td>
-                                <td>bar</td>
-                                </tr>
-                                <tr>
-                                <td>3</td>
-                                <td>bar</td>
+                                <td>&nbsp; 4 (<?php echo $breakdown[3] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[3]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
                                 <tr>
-                                <td>2</td>
-                                <td>bar</td>
+                                <td>&nbsp; 3 (<?php echo $breakdown[2] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[2]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
                                 <tr>
-                                <td>1</td>
-                                <td>bar</td>
+                                <td>&nbsp; 2 (<?php echo $breakdown[1] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[1]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                </tr>
+                                <tr>
+                                <td>&nbsp; 1 (<?php echo $breakdown[0] ?>)</td>
+                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[0]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
                             </table>
                             
@@ -118,6 +120,13 @@
                                         <input type="submit" value="Submit Review">
                                     </div>
                             </form>
+                            <div id="sort-text">
+                                <h1>All Reviews</h1>
+                                <button> Oldest Reviews </button>
+                                <button> Newest Reviews </button>
+                                <button> Most Liked </button>
+                                <button> Least Liked </button>
+                                </div>
                                 <?php
                                 $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN game_review AS gr ON r.Review_ID=gr.Review_ID AND gr.game_ID=$gameID");
                                 $reviews=$reviews->fetchAll();
@@ -128,13 +137,14 @@
                                     $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
                                     $likes=$likes->fetchObject();
                                     
-                                    if($account->UserID==$_SESSION["user"]->UserID){
+                                    if(isset($_SESSION["user"]) && $account->UserID==$_SESSION["user"]->UserID){
                                         $profileLink="profilepage.php";
                                     }else{
                                         $profileLink="viewprofilepage.php?pageid=".$gameID."&user=".$account->Username;
                                     }
                                     ?>
                                     <div id="view-review-container">
+        
                                         <div id="view-review-box">
                                             <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
                                             <p> Game Name:<?php echo $game->Name ?> </p>

@@ -174,7 +174,7 @@
 
 #second-box{
    width: 42%;
-   height: 30%;
+   height: 20%;
    background: rgb(133, 34, 142);
    float: left;
    box-sizing: border-box;
@@ -195,20 +195,20 @@
 
 #third-box{
    width: 42%;
-   height: 55%;
-   background:rgb(133, 34, 142);
+   height: 64%;
+   background: linear-gradient(90deg,#a33f9d, #4454b1);;
    float: Left;
    border-radius: 3px;
    box-sizing: border-box;
    border: solid rgb(255, 255, 255) 2.5px;
    transition: 0.2 ease-in-out;
    display:flex;
-   flex-wrap: wrap;
+   
    justify-content: center;
    font-size: 20px;
-   align-items: center;
+   
    margin-left: 0px;
-   margin-top: 45px;
+   margin-top: 41px;
    border: 8px solid;
    border-image: linear-gradient(#c850c0, #4158d0);
    border-image-slice: 1;
@@ -216,34 +216,52 @@
    box-shadow: rgba(4, 4, 22, 0.3) 10px 25px 30px;
 }
 
-#third-box img{
-   width: 50%;
-   height: 80%;
-   margin-left: -294px;
-   margin-top: -13px;
-   border-radius: 3px;
-}
- 
- #third-box h1{
-   margin-top: -200px;
-   margin-left: 31px;
-   margin-left: 24px;
-   color: white;
-   text-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px;
+#third-box-image{
+   width:100%;
+   margin-left:30px;
+   margin-top: 30px;
 }
 
- #third-box h2{
-   margin-top: -94px;
-    margin-left: -100px;
-    color: rgb(0, 0, 0);
+#third-box-text{
+   width: 100%;
+   margin-left:10px;
+   margin-top: 30px;
+
 }
- 
- #third-box p{
-   margin-left: -50px;
-    padding-top: 8px;
-    padding-top: 4px;
-    text-align: left;
+
+#third-box-text span{
+   font-weight: bold;
+   color: white ;
+   text-shadow: 2px 2px 3px rgb(0, 0, 0);
+
 }
+
+#third-box-text h4{
+   color: rgb(255, 255, 255);
+   /* text-shadow: 2px 2px 3px rgb(0, 0, 0); */
+   font-weight: bold;
+   margin-top: 20px;
+   text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+#third-box-text h2{
+   color: rgb(255, 255, 255);
+   text-shadow: 2px 2px 3px rgb(0, 0, 0);
+}
+
+#third-box-text p{
+   font-size: 20px;
+   padding-top: 10px;
+   color: white;
+}
+
+
+#third-box-image img{
+   width: 100%;
+   height: 80%;
+   border-radius: 10px;
+}
+
 /* #third-box:hover{
    background-color:rgb(216, 176, 241);
    cursor: pointer; 

@@ -38,10 +38,8 @@
   align-items: center;
   display: block;
   border: 8px solid;
-  border-image: linear-gradient(#4158d0,#c850c0);
-  border-image-slice: 1;
-  border-radius: 5px;
-  box-shadow: rgba(4, 4, 22, 0.3) 10px 25px 30px;
+  border-color: rgba(140, 54, 140, 0.587);
+  
   
 }
 
@@ -155,13 +153,11 @@
   padding-top: 2px;
 }
 
-
-
 #first-container{
   width: 60%;
   height: 500px;
   margin-top: 13px;
-  background-color: rgb(196, 174, 215);
+  background: linear-gradient(90deg,#fdaff8, #8e9be3);
   float: Left;
   border-radius: 10px;
   box-sizing: border-box;
@@ -189,9 +185,10 @@
 #first-container img{
   width: 260px;
   height: 365px;
-  margin-left: 31px;
-  margin-top: -13px;
-  border-radius: 9px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 2px;
+  box-shadow: rgba(4, 4, 22, 0.3) 10px 25px 30px;
 }
 
 #first-container h1{
@@ -230,7 +227,7 @@
   margin-top: 13px;
   display: block;
   align-content: center;
-  background-color: rgb(205, 167, 236);
+  background: linear-gradient(-90deg,#fdaff8, #8e9be3);
   float: Left;
   border-radius: 1px;
   box-sizing: border-box;
@@ -278,18 +275,45 @@
   margin-top:  20px;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-bottom: 10px;
 }
 
 .rating-breakdown-bar td,th{
-  border: 3px solid #fbf3f3;
+  border-left: #e2dae4;
+  /* border: 3px solid #fbf3f3; */
   text-align: left;
   padding: 4px;
 }
 
-.rating-breakdown-bar tr:nth-child(even){
-  background-color: rgb(213, 135, 222);
+
+
+.rating-bar{
+  height: 100%;
+  background: linear-gradient(-90deg,#e779e0, #7082dc);
+  border: #1f2e7b solid 2px;
+  margin: 1px;
+  display: block;
+  border-radius: 3px;
 }
+
+#sort-text{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#sort-text button{
+  width: 200px;
+  padding: 10px ;
+  background-color: #b561d1;
+  border: #2c2f3e solid 2px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: rgba(4, 4, 22, 0.3) 5px 15px 10px;
+
+}
+
 
 
 #backgroundImage{

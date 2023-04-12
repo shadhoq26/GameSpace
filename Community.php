@@ -30,33 +30,33 @@ tr:nth-child(even) {
         </tr>
         <tr>
             <td>panda1</td>
+            <td>Resident Evil 4 (remake)</td>
+            <td>The graphics improvemnt on this remake truly makes it a brand new experience whilst keeping the things we loved most about the original.</td>           
+        </tr>
+        <tr>
+            <td>smallcat2</td>
+            <td>Little Nightmares</td> 
+            <td>Puzzles are challenging and unique,are they making another one ?</td>          
+        </tr>
+        <tr>
+            <td>Hansel2002</td>
             <td>Resident Evil 4</td>
-            <td></td>           
+            <td>Bug error on the third mission, any way to resolve it ?</td> 
         </tr>
         <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td> 
-            <td></td>          
+            <td>IslandBoi20</td>
+            <td>Red Dead Redemption 2</td>
+            <td>Encounter a new easter egg in the saloon in Valentine</td>          
         </tr>
         <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-            <td></td> 
+            <td>CatLover5179</td>
+            <td>Inside</td>
+            <td>There was a bug whilst I was getting chased by dogs on the 4th chapter. How do I fix this?</td>            
         </tr>
         <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-            <td></td>          
-        </tr>
-        <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-            <td></td>            
-        </tr>
-        <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-            <td></td> 
+            <td>DN2012</td>
+            <td>Forspoken</td>
+            <td>Game had alot of hype behind it but went downhill real fast after it came out.</td> 
         </tr>
     </table>      
     </div>
