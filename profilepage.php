@@ -2,62 +2,43 @@
 <?php include_once "header.php"?>
 <link rel= "Stylesheet" type= "text/css" href="css/profilepage.css">
 
-<html lang="en">
+<html>
+  <?php
+    if(!isset($_SESSION["user"])){
+      header("location:loginpage.php");
+      exit();
+    }
+  ?>
   <body>
-    <div class="header__wrapper">
-      <header></header>
-      <div class="cols__container">
-        <div class="left__col">
-          <div class="img__container">
-            <img src="resources/bg.jpeg"/>
-          </div>
-          <h2> <?=$_SESSION['user']->Username?></h2>   
-          <p>First Name: <?=$_SESSION['user']->First_Name?></p>
-          <p>Last Name: <?=$_SESSION['user']->Last_Name?></p>
-          <p>Email: <?=$_SESSION['user']->Email?></p> 
+    <div id="profile-outer-container">
+    <div class="profile-container">
+      
+            <div class="image-container">
+              <img src="resources/genre images/fighting2.jpg"/>
+              <h1><?=$_SESSION['user']->Username?></h1>
+            </div>
+            <div id="follow">
+              <p> <span id="text1">421</span> <span> Followers </span></p>
+              <p><span id="text1"> 20 <span> Following</span></p>           
+            </div>
+            
+            <p><span>First Name: </span><?=$_SESSION['user']->First_Name?></p>
+            <p><span>Last Name: </span><?=$_SESSION['user']->Last_Name?></p>
+            <p><span>Email: </span><?=$_SESSION['user']->Email?></p> 
 
-          <ul class="about">
-            <li><span>4,073</span>Followers</li>
-            <li><span>322</span>Following</li>         
-          </ul>
-
-          <div class="content">
-            <p>
+            <div class="content">
+              <p>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
               erat volutpat. Morbi imperdiet, mauris ac auctor dictum, nisl
               ligula egestas nulla.
-            </p>
-        
-            <hr>
-            <h2>My Top 5 Games</h2>
-            <div id="main-5game-container">
-                <div id="top-5game-container">
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                </div>
-                <div id="bottom-5game-container">
-                    <div id="bottom-inner5game-container">
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    </div>
-                </div>
-
-            </div>  
-
-          </div>
+              </p>  
+            </div>
         </div>
-        <div class="right__col">
+    </div>
+  </div>
+
+    <div>
+    <div class="review-sort-container">
           <nav>
             <ul>
               <li><a href="">My Reviews</a></li>
@@ -67,15 +48,14 @@
             </ul>
           </nav> 
           <div id="review-container">
-          <h1> Account Name </h1>
-          <p> Game Name: </p>
-          <p> Ratings: </p>
-          <p> Likes:</p>
-          <p> Description:</p>
-          <button>Edit</button>
+            <h1> Game Name: </h1>
+            <p> Description:</p>
+            <p> Ratings: </p>
+            <p> Likes:</p>
+            <p> Disikes:</p>
+            <button>Edit</button>
           </div>
         </div>
-      </div>
     </div>
   </body>
 </html>

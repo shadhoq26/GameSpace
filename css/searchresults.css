@@ -2,30 +2,31 @@
    display: block;
    position:relative;
    padding-top: 190px;
-   margin-left: 300px;
-   margin-right: 300px;   
+   margin-left: 500px;
+   margin-right: 500px;   
  }
  
  #first-box2{
    width: 100%;
    height: 150px;   
-   background-color: rgba(145, 91, 199, 0.63); 
+   background-color: rgb(145, 91, 199); 
    box-sizing: border-box;
-   border: solid rgb(0, 0, 0) 4px;
-   transition: 0.2 ease-in-out;
+   border: solid rgb(203, 169, 238)3px;
+   transition: 0.2s ease-in-out;
    display:flex;
    font-size: 10px;
-   margin-top: 5px;
-   margin-bottom: 5px;
+   margin-top: 10px;
+   margin-bottom: 10px;
  }
 
  #first-box2:hover{
-   background-color:rgb(91, 255, 3);
+   background-color:rgb(193, 152, 234);
    cursor: pointer;   
 }
 
 .boxText2{
    color: white;
+   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
   
 }
 
@@ -50,13 +51,15 @@
    justify-content: center;
 }
 
-#search-rating-box p{
-   font-size: 35px;
-   text-align: right;
+#search-rating-box h1{
+   font-size: 25px;
+   text-align: center;
+   color: white;
+   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 }
 
 #search-image-container{
-   width: 50%;
+   width: 32%;
 }
 
 #search-image-container img{
@@ -68,7 +71,33 @@
 
 .divider{
    height: auto;
-   width: 15px;
-   background-color: rgb(0, 0, 0);
+   width: 5px;
+   background-color:  rgb(203, 169, 238);
    display: inline-block;
+}
+
+#search-background{
+   background-image: url("../resources/backgroundImages/spaceship.jpg");
+   filter: blur(0px);  
+   width:100%;
+   height:100%;
+   position:fixed;
+   background-repeat: no-repeat;
+   margin: 0;
+   display:block;
+   background-size: cover;
+   margin-top: -370px;
+   margin-left: -1px;
+   z-index:-40;
+}
+
+body{
+   background-color:#4158d0;
+}
+
+#searchresultstext{
+color: white;
+font-size: 50px;
+text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+text-align: center;
 }

@@ -45,16 +45,23 @@ $password=$_POST['password'];
 
 //If statement which states that a user cannot enter an email that already exists on the system. 
 //If they enter a new email it will sign up the user and return back to the index page.
-$userWithEmail = $database -> query("SELECT * FROM accounts WHERE email= '$email'");
+$userWithEmail = $database -> query("SELECT * FROM accounts WHERE Email= '$email'");
 if ($userWithEmail -> rowCount()> 0) {
    $message= "user with that email already exists";
    header("Location: SignUppage.php?e=$message");
-   exist();
-//This means that the user with a new email, that isnt already on the database, will be able to open an account.  
-}else{
-   $password = password_hash($password, PASSWORD_DEFAULT);
-   $database->query ("INSERT INTO accounts(first_Name, Last_Name, Username, Email, Password)
-   VALUES ('$firstName', '$lastName', '$userName','$email','$password')");
-   header("Location: Loginpage.php");
    exit();
-} 
+}
+$userWithUsername = $database -> query("SELECT * FROM accounts WHERE Username= '$userName'");
+if ($userWithUsername -> rowCount()> 0) {
+   $message= "user with this username already exists";
+   header("Location: SignUppage.php?e=$message");
+   exit();
+}
+//This means that the user with a new email, that isnt already on the database, will be able to open an account.  
+
+$password = password_hash($password, PASSWORD_DEFAULT);
+$database->query ("INSERT INTO accounts(first_Name, Last_Name, Username, Email, Password)
+VALUES ('$firstName', '$lastName', '$userName','$email','$password')");
+header("Location: Loginpage.php");
+exit();
+ 

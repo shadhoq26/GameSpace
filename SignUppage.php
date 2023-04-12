@@ -1,27 +1,49 @@
 <?php include_once "header.php"?>
-<link rel= "Stylesheet" type= "text/css" href="css/signup.css">
+<link rel= "Stylesheet" type= "text/css" href="css/signup.css"> 
 
-<!-- Contains all input boxes so the user will be able to sign up by entering their details -->
-<div id= "signupContainer">
-    <form action = "signupscript.php" method= "post">
-        <h1>Sign Up</h1> <br>
-        <input type="text" name="firstName" placeholder="First Name" class="textbox">
-        <input type="text" name="lastName" placeholder="Last Name"class="textbox">
-        <input type="text" name="userName" placeholder="Username"class="textbox">
-        <input type="email" name="email" placeholder="Email"class="textbox">
-        <input type="password" name="password" placeholder="Password"class="textbox">
-        
-        <!-- If the sign up details are wrong and the user tries to submit, an error message will appear stating the error -->
-        <div id="submitButtonContainer">
-            <input type="submit" name="submit" value="Confirm" id="submitButton"> 
-           <!-- <input type="submit" name="submit" value="Already a user ?" id="LoginPage"> -->
-            <a href ="Loginpage.php" class= "buttons"> Already a user ?</a>
-        </div>
-        
-        <?php if (isset($_GET['e'])) { ?>
-            <p id="error1"><?=$_GET['e']?></p> 
-        <?php
-            }
-        ?>   
-    </form>
-</div>
+
+<html>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            Sign Up
+         </div>
+         <form action="signupscript.php"method= "post">
+            <div class="field">
+               <input type="text" name="firstName" class="textbox">
+               <label>First Name</label>
+            </div>
+            <div class="field">
+               <input type="text" name="lastName" class="textbox">
+               <label>Last Name</label>
+            </div>
+            <div class="field">
+               <input type="text" name="userName" class="textbox">
+               <label>Username</label>
+            </div>
+            <div class="field">
+               <input type="email" name="email" class="textbox">
+               <label>Email</label>
+            </div>
+            <div class="field">
+               <input type="Password" name= "password" class="textbox">
+               <label>Password</label>
+            </div>
+            
+            <div class="field">
+               <input type="submit" name="submit" value="Confirm" id="submitButton">
+            </div>
+            <div class="signup-link">
+               Already have an account ? <a href="Loginpage.php"> Login</a>
+               <?php if (isset($_GET['e'])) { ?>
+                  <p id="error1"><?=$_GET['e']?></p> 
+                  <?php
+                  }
+                  ?> 
+                  </div>
+               </form>
+            </div>
+         </div>
+      <div id="signup-background-image"> </div>
+   </body>
+</html>
