@@ -24,7 +24,6 @@ $searchResults = $searchResults->fetchAll();
         <div id="search-image-container">
             <img src="resources/GameImages/<?php echo $searchResults[$i]["Cover_Image"] ?>"/>
         </div>
-        
         <div id="information-box">
             <h1 class = "boxText2"><?php echo $searchResults[$i]["Name"] ?></h1> 
             <p>Publisher: <?php echo $searchResults[$i]["Publisher"] ?></p>

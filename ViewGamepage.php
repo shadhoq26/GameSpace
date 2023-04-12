@@ -81,44 +81,44 @@
                         </div>
                     </div> 
                     <div class="bottom-container">
-                    <div id="contain-all-review">           
-                        <form id="reviewbox" action="makereview.php" method="post">
-                            <h1> Write your review </h1>
-                            <input type="text" name="description" placeholder="Write review here">
-                            <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
-                            <h3> Choose a rating </h3>
-                            <div class="radio_container">
-                                <input type="radio" name="rating" value="1" id="rating1">
-                                <label for="rating1">1</label>
-                                <input type="radio" name="rating" value="2" id="rating2">
-                                <label for="rating2">2</label>
-                                <input type="radio" name="rating" value="3" id="rating3">
-                                <label for="rating3">3</label>
-                                <input type="radio" name="rating" value="4" id="rating4">
-                                <label for="rating4">4</label>
-                                <input type="radio" name="rating" value="5" id="rating5">
-                                <label for="rating5">5</label>
-                                <input type="radio" name="rating" value="6" id="rating6">
-                                <label for="rating6">6</label>
-                                <input type="radio" name="rating" value="7" id="rating7">
-                                <label for="rating7">7</label>
-                                <input type="radio" name="rating" value="8" id="rating8">
-                                <label for="rating8">8</label>
-                                <input type="radio" name="rating" value="9" id="rating9">
-                                <label for="rating9">9</label>
-                                <input type="radio" name="rating" value="10" id="rating10">
-                                <label for="rating10">10</label>                               
-                                <?php
-                                if(isset($_GET["error"])){
+                        <div id="contain-all-review">           
+                            <form id="reviewbox" action="makereview.php" method="post">
+                                <h1> Write your review </h1>
+                                <input type="text" name="description" placeholder="Write review here">
+                                <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
+                                <h3> Choose a rating </h3>
+                                <div class="radio_container">
+                                    <input type="radio" name="rating" value="1" id="rating1">
+                                    <label for="rating1">1</label>
+                                    <input type="radio" name="rating" value="2" id="rating2">
+                                    <label for="rating2">2</label>
+                                    <input type="radio" name="rating" value="3" id="rating3">
+                                    <label for="rating3">3</label>
+                                    <input type="radio" name="rating" value="4" id="rating4">
+                                    <label for="rating4">4</label>
+                                    <input type="radio" name="rating" value="5" id="rating5">
+                                    <label for="rating5">5</label>
+                                    <input type="radio" name="rating" value="6" id="rating6">
+                                    <label for="rating6">6</label>
+                                    <input type="radio" name="rating" value="7" id="rating7">
+                                    <label for="rating7">7</label>
+                                    <input type="radio" name="rating" value="8" id="rating8">
+                                    <label for="rating8">8</label>
+                                    <input type="radio" name="rating" value="9" id="rating9">
+                                    <label for="rating9">9</label>
+                                    <input type="radio" name="rating" value="10" id="rating10">
+                                    <label for="rating10">10</label>
+                                    <?php
+                                    if(isset($_GET["error"])){
                                     ?>
                                     <p id=""><?php echo $_GET["error"] ?> </p>
                                     <?php             
                                     }
                                     ?>
-                                    </div>
-                                    <div class="submit_container">
-                                        <input type="submit" value="Submit Review">
-                                    </div>
+                                </div>
+                                <div class="submit_container">
+                                    <input type="submit" value="Submit Review">
+                                </div>
                             </form>
                             <div id="sort-text">
                                 <h1>All Reviews</h1>
@@ -126,7 +126,7 @@
                                 <button> Newest Reviews </button>
                                 <button> Most Liked </button>
                                 <button> Least Liked </button>
-                                </div>
+                            </div>
                                 <?php
                                 $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN game_review AS gr ON r.Review_ID=gr.Review_ID AND gr.game_ID=$gameID");
                                 $reviews=$reviews->fetchAll();
@@ -144,7 +144,6 @@
                                     }
                                     ?>
                                     <div id="view-review-container">
-        
                                         <div id="view-review-box">
                                             <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
                                             <p> Game Name:<?php echo $game->Name ?> </p>

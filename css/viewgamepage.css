@@ -272,12 +272,12 @@
 }
 
 .rating-breakdown-bar table{
-  margin-top:  20px;
+  margin-top: 14px;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-bottom: 10px;
+  margin-right: 22px;
+  margin-left: 16px;
+  padding-bottom: 11px;
 }
 
 .rating-breakdown-bar td,th{
