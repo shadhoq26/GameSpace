@@ -28,81 +28,72 @@
     exit();
   }
   ?>
-  
-  
-  <body>
-    <div class="header__wrapper">
-      <header></header>
-      <div class="cols__container">
-        <div class="left__col">
-          <div class="img__container">
-            <img src="resources/bg.jpeg"/>
+    <body>
+      <div id="profile-outer-container">
+        <div class="profile-container">
+          <div class="image-container">
+            <img src="resources/user.png"/>
+            <div id="follow-container">
+            <div id="follow">
+              <h1> <?=$userdata->Username?> </h1>
+              <p> <span id="text1">421</span> <span> Followers </span></p>
+              <p><span id="text1">20<span> Following</span></p>           
+            </div>
           </div>
-          <h2> <?=$userdata->Username?></h2>   
-          <p>First Name: <?=$userdata->First_Name?></p>
-          <p>Last Name: <?=$userdata->Last_Name?></p>
-          <p>Email: <?=$userdata->Email?></p> 
-
-          <ul class="about">
-            <li><span>4,073</span>Followers</li>
-            <li><span>322</span>Following</li>         
-          </ul>
-
-          <div class="content">
+          </div>        
+          <div id="personal-info">
+            <p><span>First Name: </span> <?=$userdata->First_Name?></p>
+            <p><span>Last Name: </span><?=$userdata->Last_Name?></p>
+            <p><span>Email: </span><?=$userdata->Email?></p> 
+          </div>
+          <div id="bio">
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
-              erat volutpat. Morbi imperdiet, mauris ac auctor dictum, nisl
-              ligula egestas nulla.
+              <span>Bio: </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquamerat volutpat. Morbi imperdiet, mauris ac auctor dictum, nislligula egestas nulla.
             </p>
-        
-            <hr>
-            <h2>My Top 5 Games</h2>
-            <div id="main-5game-container">
-                <div id="top-5game-container">
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                </div>
-                <div id="bottom-5game-container">
-                    <div id="bottom-inner5game-container">
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    </div>
-                </div>
-
-            </div>  
-
+            <button> Follow </button>  
           </div>
         </div>
-        <div class="right__col">
-          <nav>
-          <button>Follow</button>
-            <ul>
-              <li><a href="">My Reviews</a></li>
-              <li><a href="">Newest Reviews</a></li>
-              <li><a href="">Popular Reviews</a></li>
-              <li><a href="">Oldest Reviews</a></li>
-            </ul>
-          </nav> 
-          <div id="review-container">
-          <div id="review-container">
-          <h1> Game Name: </h1>
-          <p> Description:</p>
-          <p> Ratings: </p>
-          <p> Likes:</p>
+        <div id="profile-second-container">
+        <div>
+          <div id="sort-text">
+            <h1><?=$userdata->Username?>'s Reviews</h1>
+            <button> All Reviews </button>
+            <button> Newest Reviews </button>
+            <button> Popular Reviews </button>
+            <button> Oldest Reviews</button>
           </div>
+          <?php
+            $userID=$userdata->UserID;
+            $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN review_owner AS ro ON r.Review_ID=ro.Review_ID AND ro.User_ID='$userID'");
+            $reviews=$reviews->fetchAll();
+            for($i=0;$i<count($reviews);$i++){
+              $reviewID=$reviews[$i]["Review_ID"];
+              $gameData=$database->query("SELECT g.* FROM games AS g INNER JOIN game_review AS gr ON g.game_ID=gr.game_ID AND gr.Review_ID='$reviewID'");
+              $gameData=$gameData->fetchObject();
+              
+              $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+              $likes=$likes->fetchObject();
+            ?>
+            <div class="review-sort-container">
+              <div id="view-review-container">
+                <div id="review-image-container">
+                  <img src="resources/GameImages/<?php echo $gameData->Cover_Image?>"/>
+                </div>
+                <div id="view-review-box">
+                  <h1><?php echo $gameData->Name?></h1>
+                  <p> Description: <?php echo $reviews[$i]["reviews"] ?></p>
+                  <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                  <p> Likes: <?php echo $likes->reviewCount?></p>
+                  <button>Edit</button>
+                  <button>Delete Review</button>
+                </div>
+              </div>
+              <?php
+              }
+              ?>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+      </div>
+    </body>
+</html>   
+  

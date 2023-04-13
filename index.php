@@ -25,21 +25,18 @@
                         </div>
                         
                         <div id="second-container">
-
                         <div id="third-box"> 
                             <div id="third-box-image">
                                 <img src="resources/slideshowimages/starwarsimage2.jpg">  
                             </div> 
                             <div id="third-box-text">
                                 <h2> DAILY NEWS </h2>              
-                                <h4>STAR WARS: JEDI SURVIVOR</h4>
-                                
-                                <p> Unfortunately, most of BD-1's features in Star Wars Jedi: Fallen Order are relegated to roles that are outside of combat. The ziplines and light segments are location-specific and stim dispersal is just a unique animation that plays whenever Cal needs a quick pick-me-up.</p>
-                                <p> <span> Author:</span> PandaMan202</p>
+                                <h4>STAR WARS: JEDI SURVIVOR</h4>         
+                                <p>Unfortunately, most of BD-1's features in Star Wars Jedi: Fallen Order are relegated to roles that are outside of combat. The ziplines and light segments are location-specific and stim dispersal is just a unique animation that plays whenever Cal needs a quick pick-me-up.</p>
+                                <p><span> Author:</span> PandaMan202</p>
                             </div>
                         </div>
-                        <div id="second-box" onclick="location.href='Community.php'"><h1 class="boxText">Community</h1></div>
-                        
+                        <div id="second-box" onclick="location.href='Community.php'"><h1 class="boxText">Community</h1></div>    
                     </div>
                 </div>
             </div> 

@@ -2,22 +2,22 @@
 <link rel= "Stylesheet" type= "text/css" href="css/community.css">
     
 <style>
+
 table {
   padding: 20px;
+  margin-top:20px;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  background-color:#e86fe0;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+td , th {
+  border: 1px solid black;
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: ;
-}
 </style>
     <div id="textContainer2">
     <div id="textInnerContainer2">
@@ -31,7 +31,7 @@ tr:nth-child(even) {
         <tr>
             <td>panda1</td>
             <td>Resident Evil 4 (remake)</td>
-            <td>The graphics improvemnt on this remake truly makes it a brand new experience whilst keeping the things we loved most about the original.</td>           
+            <td>The graphics improvement on this remake truly makes it a brand new experience whilst keeping the things we loved most about the original.</td>           
         </tr>
         <tr>
             <td>smallcat2</td>

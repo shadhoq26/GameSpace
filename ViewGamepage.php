@@ -16,6 +16,7 @@
                 $average= getAverage($gameID);
                 $breakdown= getAverageBreakdown($gameID);
                 
+                
                 ?> 
                 <div class="box-container">
                     <div id="first-container">
@@ -39,45 +40,60 @@
                                 <tr>
                                     <th style="width:10%"> Ratings</th>
                                     <th style="width:80%"></th>
-                                </tr>      
+                                </tr> 
+
                                 <tr>
-                                <td>10 (<?php echo $breakdown[9] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[9]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
-                                </tr>
-                                <td>&nbsp; 9 (<?php echo $breakdown[8] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[8]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
-                                <tr>
-                                <td>&nbsp; 8 (<?php echo $breakdown[7] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[7]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
-                                </tr>
-                                <td>&nbsp; 7 (<?php echo $breakdown[6] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[6]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
-                                <tr>
-                                <td>&nbsp; 6 (<?php echo $breakdown[5] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[5]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
-                                </tr>
-                                <td>&nbsp; 5 (<?php echo $breakdown[4] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[4]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
-                                <tr>
-                                <td>&nbsp; 4 (<?php echo $breakdown[3] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[3]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                    <td>10 (<?php echo $breakdown[9] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[9]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
                                 <tr>
-                                <td>&nbsp; 3 (<?php echo $breakdown[2] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[2]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                    <td>&nbsp; 9 (<?php echo $breakdown[8] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[8]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
+
                                 <tr>
-                                <td>&nbsp; 2 (<?php echo $breakdown[1] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[1]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                    <td>&nbsp; 8 (<?php echo $breakdown[7] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[7]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
+
                                 <tr>
-                                <td>&nbsp; 1 (<?php echo $breakdown[0] ?>)</td>
-                                <td><span class="rating-bar" style="width:<?php echo round(($breakdown[0]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                    <td>&nbsp; 7 (<?php echo $breakdown[6] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[6]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>&nbsp; 6 (<?php echo $breakdown[5] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[5]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>&nbsp; 5 (<?php echo $breakdown[4] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[4]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>&nbsp; 4 (<?php echo $breakdown[3] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[3]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>&nbsp; 3 (<?php echo $breakdown[2] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[2]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>&nbsp; 2 (<?php echo $breakdown[1] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[1]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>&nbsp; 1 (<?php echo $breakdown[0] ?>)</td>
+                                    <td><span class="rating-bar" style="width:<?php echo round(($breakdown[0]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
                             </table>
                             
-                            <div id="rating-bar-percentage">
-                            </div>
+                            <!-- <div id="rating-bar-percentage">
+                            </div> -->
                         </div>
                     </div> 
                     <div class="bottom-container">
