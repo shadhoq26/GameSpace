@@ -84,8 +84,6 @@
                   <p> Description: <?php echo $reviews[$i]["reviews"] ?></p>
                   <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
                   <p> Likes: <?php echo $likes->reviewCount?></p>
-                  <button>Edit</button>
-                  <button>Delete Review</button>
                 </div>
               </div>
               <?php
