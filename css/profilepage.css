@@ -190,12 +190,24 @@ span{
   margin-top: 20px;
 }
 
-#sort-text button{
+#sort-text .normalbutton{
   width: 200px;
   padding: 10px ;
   background-color: #b561d1;
   color: white;
   border: #2c2f3e solid 2px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: rgba(4, 4, 22, 0.3) 5px 15px 10px;
+}
+
+#sort-text .buttonhighlight{
+  
+  width: 200px;
+  padding: 10px ;
+  background-color: #b561d1;
+  color: white;
+  border: #ffffff solid 2px;
   border-radius: 4px;
   font-weight: bold;
   box-shadow: rgba(4, 4, 22, 0.3) 5px 15px 10px;
@@ -224,6 +236,9 @@ span{
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
 }
+
+
+
 
 body{
   background-color:#4158d0;

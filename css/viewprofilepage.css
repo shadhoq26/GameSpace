@@ -82,6 +82,7 @@
 #personal-info p{
   margin: 10px;
   font-size: 15px;
+  font-weight: bold;
   
 }
 
@@ -107,7 +108,7 @@ span{
 }
 
 .profile-container p{
-  
+  font-weight: bold;
   margin-top:10px;
   padding-top: 5px;
   text-align: left;

@@ -27,6 +27,26 @@
     header("location: Viewgamepage.php?id=$pageid");
     exit();
   }
+
+ 
+
+  $followers=$database->query("SELECT SUM(Followee_ID=$userdata->UserID) AS followers FROM followers");
+  $followers=$followers->fetchObject();
+
+  $following=$database->query("SELECT SUM(Follower_ID=$userdata->UserID) AS following FROM followers");
+  $following=$following->fetchObject();
+  if(isset($_SESSION["user"])){
+    $userID=$_SESSION["user"]->UserID;
+    $followCheck=$database->query("SELECT * FROM followers WHERE Followee_ID='$userdata->UserID' AND Follower_ID='$userID'");
+    if($followCheck->rowCount()==1){
+      $followingUser=TRUE;
+    }else{
+      $followingUser=FALSE;
+    }
+  }else{
+    $followingUser=FALSE;
+  }
+ 
   ?>
     <body>
       <div id="profile-outer-container">
@@ -36,8 +56,8 @@
             <div id="follow-container">
             <div id="follow">
               <h1> <?=$userdata->Username?> </h1>
-              <p> <span id="text1">421</span> <span> Followers </span></p>
-              <p><span id="text1">20<span> Following</span></p>           
+              <p> <span id="text1"> <?=$followers->followers?> </span> <span> Followers </span></p>
+              <p><span id="text1"> <?=$following->following?> <span> Following</span></p>           
             </div>
           </div>
           </div>        
@@ -50,7 +70,18 @@
             <p>
               <span>Bio: </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquamerat volutpat. Morbi imperdiet, mauris ac auctor dictum, nislligula egestas nulla.
             </p>
-            <button> Follow </button>  
+            <?php
+            if($followingUser){
+            ?>
+            <button onclick="location.href='followscript.php?follow=<?=$userdata->UserID?>&user=<?=$username?>&pageid=<?=$pageid?>'"> Unfollow </button> 
+            <?php
+          
+            }else{
+            ?>
+             <button onclick="location.href='followscript.php?follow=<?=$userdata->UserID?>&user=<?=$username?>&pageid=<?=$pageid?>'"> Follow </button>  
+            <?php
+            } 
+            ?>
           </div>
         </div>
         <div id="profile-second-container">

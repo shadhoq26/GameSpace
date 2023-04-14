@@ -300,18 +300,36 @@
 
 #sort-text{
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-#sort-text button{
+#sort-text h1{
+  margin-bottom: 10px;
+}
+
+
+
+#sort-text .normalbutton{
   width: 200px;
   padding: 10px ;
   background-color: #b561d1;
+  color: white;
   border: #2c2f3e solid 2px;
   border-radius: 4px;
   font-weight: bold;
   box-shadow: rgba(4, 4, 22, 0.3) 5px 15px 10px;
+}
 
+#sort-text .buttonhighlight{
+  
+  width: 200px;
+  padding: 10px ;
+  background-color: #b561d1;
+  color: white;
+  border: #ffffff solid 2px;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: rgba(4, 4, 22, 0.3) 5px 15px 10px;
 }
 
 

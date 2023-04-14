@@ -136,45 +136,132 @@
                                     <input type="submit" value="Submit Review">
                                 </div>
                             </form>
+                            
                             <div id="sort-text">
                                 <h1>All Reviews</h1>
-                                <button> Oldest Reviews </button>
-                                <button> Newest Reviews </button>
-                                <button> Most Liked </button>
-                                <button> Least Liked </button>
+                                
+                                <?php
+                                if(isset($_GET["sort"])){
+                                    $sort=$_GET["sort"];
+                                    if($sort=="new"){
+                                    ?>
+                                    <button class="normalbutton" onclick="location.href='ViewGamepage.php?sort=old&id=<?=$gameID?>'"> Oldest Reviews </button>
+                                    <button class="buttonhighlight" onclick="location.href='ViewGamepage.php?sort=new&id=<?=$gameID?>'"> Newest Reviews </button>
+                                    <?php
+                                    }else if($sort=="old"){
+                                    ?>
+                                    <button class="buttonhighlight" onclick="location.href='ViewGamepage.php?sort=old&id=<?=$gameID?>'"> Oldest Reviews </button>
+                                    <button class="normalbutton" onclick="location.href='ViewGamepage.php?sort=new&id=<?=$gameID?>'"> Newest Reviews </button>
+                                    <?php
+                                    }
+                                }else{
+                                    ?>
+                                    <button class="buttonhighlight" onclick="location.href='ViewGamepage.php?sort=old&id=<?=$gameID?>'"> Oldest Reviews </button>
+                                    <button class="normalbutton" onclick="location.href='ViewGamepage.php?sort=new&id=<?=$gameID?>'"> Newest Reviews </button>
+                                    <?php
+                                }
+                                ?>
+                                <button class="normalbutton"> Most Liked </button>
+                                <button class="normalbutton"> Least Liked </button>
                             </div>
                                 <?php
                                 $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN game_review AS gr ON r.Review_ID=gr.Review_ID AND gr.game_ID=$gameID");
                                 $reviews=$reviews->fetchAll();
-                                for($i=0;$i<count($reviews);$i++){
-                                    $reviewID=$reviews[$i]["Review_ID"];
-                                    $account=$database->query("SELECT a.* FROM accounts AS a INNER JOIN review_owner AS ro ON a.UserID=ro.User_ID AND ro.Review_ID=$reviewID");
-                                    $account=$account->fetchObject();
-                                    $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
-                                    $likes=$likes->fetchObject();
-                                    
-                                    if(isset($_SESSION["user"]) && $account->UserID==$_SESSION["user"]->UserID){
-                                        $profileLink="profilepage.php";
-                                    }else{
-                                        $profileLink="viewprofilepage.php?pageid=".$gameID."&user=".$account->Username;
+                                if(isset($_GET["sort"])){
+                                    $sort=$_GET["sort"];
+                                    if($sort=="new"){
+                                        for($i=count($reviews)-1;$i>-1;$i--){
+                                            $reviewID=$reviews[$i]["Review_ID"];
+                                            $account=$database->query("SELECT a.* FROM accounts AS a INNER JOIN review_owner AS ro ON a.UserID=ro.User_ID AND ro.Review_ID=$reviewID");
+                                            $account=$account->fetchObject();
+                                            $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+                                            $likes=$likes->fetchObject();
+                                            
+                                            if(isset($_SESSION["user"]) && $account->UserID==$_SESSION["user"]->UserID){
+                                                $profileLink="profilepage.php";
+                                            }else{
+                                                $profileLink="viewprofilepage.php?pageid=".$gameID."&user=".$account->Username;
+                                            }
+                                            ?>
+                                            <div id="view-review-container">
+                                                <div id="view-review-box">
+                                                    <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
+                                                    <p> Game Name:<?php echo $game->Name ?> </p>
+                                                    <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
+                                                    <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                                                    <p> Likes:<?php echo $likes->reviewCount?></p>
+                                                    <form action="LikereviewScript.php" method="POST">
+                                                        <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
+                                                        <input type="hidden" name="pageID" value="<?php echo $gameID?>">
+                                                        <button type="submit"> Like </button>
+                                                    </form>
+                                                </div>
+                                            </div>          
+                                        <?php 
+                                        }
+                                    }else if($sort=="old"){
+                                        for($i=0;$i<count($reviews);$i++){
+                                            $reviewID=$reviews[$i]["Review_ID"];
+                                            $account=$database->query("SELECT a.* FROM accounts AS a INNER JOIN review_owner AS ro ON a.UserID=ro.User_ID AND ro.Review_ID=$reviewID");
+                                            $account=$account->fetchObject();
+                                            $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+                                            $likes=$likes->fetchObject();
+                                            
+                                            if(isset($_SESSION["user"]) && $account->UserID==$_SESSION["user"]->UserID){
+                                                $profileLink="profilepage.php";
+                                            }else{
+                                                $profileLink="viewprofilepage.php?pageid=".$gameID."&user=".$account->Username;
+                                            }
+                                            ?>
+                                            <div id="view-review-container">
+                                                <div id="view-review-box">
+                                                    <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
+                                                    <p> Game Name:<?php echo $game->Name ?> </p>
+                                                    <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
+                                                    <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                                                    <p> Likes:<?php echo $likes->reviewCount?></p>
+                                                    <form action="LikereviewScript.php" method="POST">
+                                                        <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
+                                                        <input type="hidden" name="pageID" value="<?php echo $gameID?>">
+                                                        <button type="submit"> Like </button>
+                                                    </form>
+                                                </div>
+                                            </div>          
+                                        <?php 
+                                        }
                                     }
-                                    ?>
-                                    <div id="view-review-container">
-                                        <div id="view-review-box">
-                                            <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
-                                            <p> Game Name:<?php echo $game->Name ?> </p>
-                                            <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
-                                            <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                                            <p> Likes:<?php echo $likes->reviewCount?></p>
-                                            <form action="LikereviewScript.php" method="POST">
-                                                <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
-                                                <input type="hidden" name="pageID" value="<?php echo $gameID?>">
-                                                <button type="submit"> Like </button>
-                                            </form>
-                                        </div>
-                                    </div>          
-                                <?php 
-                                }   
+                                }else{
+                                    for($i=0;$i<count($reviews);$i++){
+                                        $reviewID=$reviews[$i]["Review_ID"];
+                                        $account=$database->query("SELECT a.* FROM accounts AS a INNER JOIN review_owner AS ro ON a.UserID=ro.User_ID AND ro.Review_ID=$reviewID");
+                                        $account=$account->fetchObject();
+                                        $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+                                        $likes=$likes->fetchObject();
+                                        
+                                        if(isset($_SESSION["user"]) && $account->UserID==$_SESSION["user"]->UserID){
+                                            $profileLink="profilepage.php";
+                                        }else{
+                                            $profileLink="viewprofilepage.php?pageid=".$gameID."&user=".$account->Username;
+                                        }
+                                        ?>
+                                        <div id="view-review-container">
+                                            <div id="view-review-box">
+                                                <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
+                                                <p> Game Name:<?php echo $game->Name ?> </p>
+                                                <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
+                                                <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                                                <p> Likes:<?php echo $likes->reviewCount?></p>
+                                                <form action="LikereviewScript.php" method="POST">
+                                                    <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
+                                                    <input type="hidden" name="pageID" value="<?php echo $gameID?>">
+                                                    <button type="submit"> Like </button>
+                                                </form>
+                                            </div>
+                                        </div>          
+                                    <?php 
+                                    }
+                                }
+                                   
                             }else{
                                 ?>
                                 <p> Game not found </p>
