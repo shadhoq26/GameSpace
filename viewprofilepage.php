@@ -68,7 +68,7 @@
           </div>
           <div id="bio">
             <p>
-              <span>Bio: </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquamerat volutpat. Morbi imperdiet, mauris ac auctor dictum, nislligula egestas nulla.
+              <span>Bio: I love games !</span>
             </p>
             <?php
             if($followingUser){
@@ -88,16 +88,38 @@
         <div>
           <div id="sort-text">
             <h1><?=$userdata->Username?>'s Reviews</h1>
-            <button> All Reviews </button>
-            <button> Newest Reviews </button>
-            <button> Popular Reviews </button>
-            <button> Oldest Reviews</button>
+            <button class="normalbutton"> Popular Reviews </button>
+              <?php
+              if(isset($_GET["sort"])){
+                $sort=$_GET["sort"];
+                if($sort=="new"){
+                  ?>
+                  <button class="normalbutton" onclick="location.href='viewprofilepage.php?sort=old&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Oldest Reviews </button>
+                  <button class="buttonhighlight" onclick="location.href='viewprofilepage.php?sort=new&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Newest Reviews </button>
+                  <?php
+                }else if($sort=="old"){
+                  ?>
+                  <button class="buttonhighlight" onclick="location.href='viewprofilepage.php?sort=old&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Oldest Reviews </button>
+                  <button class="normalbutton" onclick="location.href='viewprofilepage.php?sort=new&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Newest Reviews </button>
+                  <?php
+                }
+              }else{
+                ?>
+                <button class="buttonhighlight" onclick="location.href='viewprofilepage.php?sort=old&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Oldest Reviews </button>
+                <button class="normalbutton" onclick="location.href='viewprofilepage.php?sort=new&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Newest Reviews </button>
+                <?php
+              }
+              ?>
+              <button class="normalbutton"> Top 5 games</button>  
           </div>
           <?php
             $userID=$userdata->UserID;
             $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN review_owner AS ro ON r.Review_ID=ro.Review_ID AND ro.User_ID='$userID'");
             $reviews=$reviews->fetchAll();
-            for($i=0;$i<count($reviews);$i++){
+            if(isset($_GET["sort"])){
+              $sort=$_GET["sort"];
+              if($sort=="new"){
+            for($i=count($reviews)-1;$i>-1;$i--){
               $reviewID=$reviews[$i]["Review_ID"];
               $gameData=$database->query("SELECT g.* FROM games AS g INNER JOIN game_review AS gr ON g.game_ID=gr.game_ID AND gr.Review_ID='$reviewID'");
               $gameData=$gameData->fetchObject();
@@ -119,7 +141,56 @@
               </div>
               <?php
               }
+
+            }else if($sort=="old"){
+              for($i=0;$i<count($reviews);$i++){
+                $reviewID=$reviews[$i]["Review_ID"];
+                $gameData=$database->query("SELECT g.* FROM games AS g INNER JOIN game_review AS gr ON g.game_ID=gr.game_ID AND gr.Review_ID='$reviewID'");
+                $gameData=$gameData->fetchObject();
+                
+                $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+                $likes=$likes->fetchObject();
               ?>
+              <div class="review-sort-container">
+              <div id="view-review-container">
+                <div id="review-image-container">
+                  <img src="resources/GameImages/<?php echo $gameData->Cover_Image?>"/>
+                </div>
+                <div id="view-review-box">
+                  <h1><?php echo $gameData->Name?></h1>
+                  <p> Description: <?php echo $reviews[$i]["reviews"] ?></p>
+                  <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                  <p> Likes: <?php echo $likes->reviewCount?></p>
+                </div>
+              </div>
+              <?php
+              }
+            }
+          }else{
+            for($i=0;$i<count($reviews);$i++){
+              $reviewID=$reviews[$i]["Review_ID"];
+              $gameData=$database->query("SELECT g.* FROM games AS g INNER JOIN game_review AS gr ON g.game_ID=gr.game_ID AND gr.Review_ID='$reviewID'");
+              $gameData=$gameData->fetchObject();
+              
+              $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+              $likes=$likes->fetchObject();
+              ?>
+              <div class="review-sort-container">
+              <div id="view-review-container">
+                <div id="review-image-container">
+                  <img src="resources/GameImages/<?php echo $gameData->Cover_Image?>"/>
+                </div>
+                <div id="view-review-box">
+                  <h1><?php echo $gameData->Name?></h1>
+                  <p> Description: <?php echo $reviews[$i]["reviews"] ?></p>
+                  <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
+                  <p> Likes: <?php echo $likes->reviewCount?></p>
+                </div>
+              </div>
+              <?php
+              }
+            }
+            ?>
         </div>
       </div>
       </div>

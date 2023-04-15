@@ -36,7 +36,7 @@
             </div>
             <div id="bio">
               <p>
-                <span>Bio: </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquamerat volutpat. Morbi imperdiet, mauris ac auctor dictum, nislligula egestas nulla.
+                <span>Bio: </span> I love game.
               </p>
               <button> Edit Bio </button>  
             </div>
