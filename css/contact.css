@@ -5,8 +5,8 @@
  }
  
  #textInnerContainer2{
-    height: 500px;
-    width: 35%;
+    height: 450px;
+    width: 40%;
     background:linear-gradient(#e86fe0, #788ae8);
     margin-top: 216px;
     border-radius: 10px;
@@ -17,10 +17,33 @@
  #textInnerContainer2 h1{
     color: white;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#textInnerContainer2 span{
+   font-weight: bold
+}
+
+#textInnerContainer2 h2{
+   color: white;
+   text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+   text-align: left;
+   margin-left: 20px;
+   margin-top: 20px;
 }
  
  #textInnerContainer2 img{
-    height: 50%;
+   width: 30%;
+    height: 40%;
+    margin-right: 430px;
+}
+
+#textInnerContainer2 p{
+   text-align: left;
+   margin-left: 20px;
+   font-size: 20px;
 }
 
 #contact-background-image{
