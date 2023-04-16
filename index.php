@@ -27,12 +27,12 @@
                         <div id="second-container">
                         <div id="third-box"> 
                             <div id="third-box-image">
-                                <img src="resources/slideshowimages/starwarsimage2.jpg">  
+                                <img src="resources/slideshowimages/leonimage.jpg">  
                             </div> 
                             <div id="third-box-text">
                                 <h2> DAILY NEWS </h2>              
-                                <h4>STAR WARS: JEDI SURVIVOR</h4>         
-                                <p>Unfortunately, most of BD-1's features in Star Wars Jedi: Fallen Order are relegated to roles that are outside of combat. The ziplines and light segments are location-specific and stim dispersal is just a unique animation that plays whenever Cal needs a quick pick-me-up.</p>
+                                <h4>RESIDENT EVIL 4: REMAKE</h4>         
+                                <p>A Reddit user called Fllover shared an impressive achievement on the Resident Evil 4 remake subreddit, and many players were surprised about what the user did. According to the Reddit post, the user beat the game on Professional difficulty while only using pistols and knives. For gamers not familiar with Resident Evil 4's difficulty settings.</p>
                                 <p><span> Author:</span> PandaMan202</p>
                             </div>
                         </div>
