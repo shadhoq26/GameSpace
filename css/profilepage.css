@@ -88,7 +88,7 @@
 span{
  font-weight: bold;
  text-shadow: black 40px;
- color: rgb(109, 35, 124);
+ color: rgb(33, 14, 37);
   
 }
 
@@ -167,6 +167,7 @@ span{
 #view-review-box{
   margin-top: 20px;
   margin-left: 20px;
+  width:69%
 }
 
 #view-review-box p{

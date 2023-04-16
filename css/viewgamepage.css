@@ -127,6 +127,10 @@
   width: 100%;
 }
 
+#view-review-box span{
+  font-weight: bold;
+}
+
 #view-review-box form{
   width: 100%;
   margin-left: 5px;
@@ -181,6 +185,9 @@
   padding-top: 210px;
 }
 
+#first-text-container span{
+  font-weight: bold;
+}
 
 #first-container img{
   width: 260px;

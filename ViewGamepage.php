@@ -25,10 +25,10 @@
                         </div>
                         <div id="first-text-container">
                             <h1> <?php echo $game-> Name;?> </h1>
-                            <p>Price: <?php echo $game-> Price;?></p>
-                            <p>Genre: <?php echo $game-> Genre;?> </p>
-                            <p>Platform: <?php echo $game-> Platform;?></p>
-                            <p>Age Rating: <?php echo $game-> Age_Rating;?></p>
+                            <p><span>Price:</span> <?php echo $game-> Price;?></p>
+                            <p><span>Genre:</span> <?php echo $game-> Genre;?> </p>
+                            <p><span>Platform:</span> <?php echo $game-> Platform;?></p>
+                            <p><span>Age Rating:</span> <?php echo $game-> Age_Rating;?></p>
                             <p> <?php echo $game-> Information;?></p>
                         </div>
                         <a href="<?php echo $game-> Purchase_Link;?>"> Buy Now </a>  
@@ -186,10 +186,10 @@
                                             <div id="view-review-container">
                                                 <div id="view-review-box">
                                                     <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
-                                                    <p> Game Name:<?php echo $game->Name ?> </p>
-                                                    <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
-                                                    <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                                                    <p> Likes:<?php echo $likes->reviewCount?></p>
+                                                    <p><span>Game Name:</span><?php echo $game->Name ?> </p>
+                                                    <p><span>Description:</span> <?php echo $reviews[$i]["reviews"] ?></p> 
+                                                    <p><span>Ratings:</span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                                                    <p><span>Likes:</span><?php echo $likes->reviewCount?></p>
                                                     <form action="LikereviewScript.php" method="POST">
                                                         <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
                                                         <input type="hidden" name="pageID" value="<?php echo $gameID?>">
@@ -216,10 +216,10 @@
                                             <div id="view-review-container">
                                                 <div id="view-review-box">
                                                     <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
-                                                    <p> Game Name:<?php echo $game->Name ?> </p>
-                                                    <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
-                                                    <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                                                    <p> Likes:<?php echo $likes->reviewCount?></p>
+                                                    <p><span> Game Name:</span><?php echo $game->Name ?> </p>
+                                                    <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p> 
+                                                    <p><span> Ratings:</span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                                                    <p><span> Likes:</span><?php echo $likes->reviewCount?></p>
                                                     <form action="LikereviewScript.php" method="POST">
                                                         <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
                                                         <input type="hidden" name="pageID" value="<?php echo $gameID?>">
@@ -247,10 +247,10 @@
                                         <div id="view-review-container">
                                             <div id="view-review-box">
                                                 <h1><a href="<?php echo $profileLink?>"><?php echo $account->Username?></a></h1> 
-                                                <p> Game Name:<?php echo $game->Name ?> </p>
-                                                <p> Description: <?php echo $reviews[$i]["reviews"] ?></p> 
-                                                <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                                                <p> Likes:<?php echo $likes->reviewCount?></p>
+                                                <p><span> Game Name:</span><?php echo $game->Name ?> </p>
+                                                <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p> 
+                                                <p><span> Ratings:</span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                                                <p><span> Likes:</span><?php echo $likes->reviewCount?></p>
                                                 <form action="LikereviewScript.php" method="POST">
                                                     <input type="hidden" name="reviewID" value="<?php echo $reviewID?>">
                                                     <input type="hidden" name="pageID" value="<?php echo $gameID?>">

@@ -90,9 +90,9 @@
                     </div>
                     <div id="view-review-box">
                       <h1><?php echo $gameData->Name?></h1>
-                      <p> Description: <?php echo $reviews[$i]["reviews"] ?></p>
-                      <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                      <p> Likes: <?php echo $likes->reviewCount?></p>
+                      <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p>
+                      <p><span> Ratings:<span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                      <p><span>Likes:<span> <?php echo $likes->reviewCount?></p>
                       <button>Edit</button>
                       <button>Delete Review</button>
                     </div>
@@ -115,9 +115,9 @@
                     </div>
                     <div id="view-review-box">
                       <h1><?php echo $gameData->Name?></h1>
-                      <p> Description: <?php echo $reviews[$i]["reviews"] ?></p>
-                      <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                      <p> Likes: <?php echo $likes->reviewCount?></p>
+                      <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p>
+                      <p><span> Ratings:<span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                      <p><span>Likes:<span> <?php echo $likes->reviewCount?></p>
                       <button>Edit</button>
                       <button>Delete Review</button>
                     </div>
@@ -141,9 +141,9 @@
                   </div>
                   <div id="view-review-box">
                     <h1><?php echo $gameData->Name?></h1>
-                    <p> Description: <?php echo $reviews[$i]["reviews"] ?></p>
-                    <p> Ratings: <?php echo $reviews[$i]["ratings"] ?> </p>
-                    <p> Likes: <?php echo $likes->reviewCount?></p>
+                    <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p>
+                    <p><span> Ratings:<span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                    <p> <span>Likes:<span> <?php echo $likes->reviewCount?></p>
                     <button>Edit</button>
                     <button>Delete Review</button>
                   </div>
