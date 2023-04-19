@@ -27,80 +27,173 @@
     header("location: Viewgamepage.php?id=$pageid");
     exit();
   }
-  ?> 
-  <body>
-    <div class="header__wrapper">
-      <header></header>
-      <div class="cols__container">
-        <div class="left__col">
-          <div class="img__container">
-            <img src="resources/bg.jpeg"/>
+
+ 
+
+  $followers=$database->query("SELECT SUM(Followee_ID=$userdata->UserID) AS followers FROM followers");
+  $followers=$followers->fetchObject();
+
+  $following=$database->query("SELECT SUM(Follower_ID=$userdata->UserID) AS following FROM followers");
+  $following=$following->fetchObject();
+  if(isset($_SESSION["user"])){
+    $userID=$_SESSION["user"]->UserID;
+    $followCheck=$database->query("SELECT * FROM followers WHERE Followee_ID='$userdata->UserID' AND Follower_ID='$userID'");
+    if($followCheck->rowCount()==1){
+      $followingUser=TRUE;
+    }else{
+      $followingUser=FALSE;
+    }
+  }else{
+    $followingUser=FALSE;
+  }
+ 
+  ?>
+    <body>
+      <div id="profile-outer-container">
+        <div class="profile-container">
+          <div class="image-container">
+            <img src="resources/user.png"/>
+            <div id="follow-container">
+            <div id="follow">
+              <h1> <?=$userdata->Username?> </h1>
+              <p> <span id="text1"> <?=$followers->followers?> </span> <span> Followers </span></p>
+              <p><span id="text1"> <?=$following->following?> <span> Following</span></p>           
+            </div>
           </div>
-          <h2> <?=$userdata->Username?></h2>   
-          <p>First Name: <?=$userdata->First_Name?></p>
-          <p>Last Name: <?=$userdata->Last_Name?></p>
-          <p>Email: <?=$userdata->Email?></p> 
-
-          <ul class="about">
-            <li><span>4,073</span>Followers</li>
-            <li><span>322</span>Following</li>         
-          </ul>
-
-          <div class="content">
+          </div>        
+          <div id="personal-info">
+            <p><span>First Name: </span> <?=$userdata->First_Name?></p>
+            <p><span>Last Name: </span><?=$userdata->Last_Name?></p>
+            <p><span>Email: </span><?=$userdata->Email?></p> 
+          </div>
+          <div id="bio">
             <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
-              erat volutpat. Morbi imperdiet, mauris ac auctor dictum, nisl
-              ligula egestas nulla.
+              <span>Bio: I love games !</span>
             </p>
-        
-            <hr>
-            <h2>My Top 5 Games</h2>
-            <div id="main-5game-container">
-                <div id="top-5game-container">
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                </div>
-                <div id="bottom-5game-container">
-                    <div id="bottom-inner5game-container">
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    <div class="third-5game-container">
-                    <p> hi</p>
-                    </div>
-                    </div>
-                </div>
-
-            </div>  
-
+            <?php
+            if($followingUser){
+            ?>
+            <button onclick="location.href='followscript.php?follow=<?=$userdata->UserID?>&user=<?=$username?>&pageid=<?=$pageid?>'"> Unfollow </button> 
+            <?php
+          
+            }else{
+            ?>
+             <button onclick="location.href='followscript.php?follow=<?=$userdata->UserID?>&user=<?=$username?>&pageid=<?=$pageid?>'"> Follow </button>  
+            <?php
+            } 
+            ?>
           </div>
         </div>
-        <div class="right__col">
-          <nav>
-          <button>Follow</button>
-            <ul>
-              <li><a href="">My Reviews</a></li>
-              <li><a href="">Newest Reviews</a></li>
-              <li><a href="">Popular Reviews</a></li>
-              <li><a href="">Oldest Reviews</a></li>
-            </ul>
-          </nav> 
-          <div id="review-container">
-          <div id="review-container">
-          <h1> Game Name: </h1>
-          <p> Description:</p>
-          <p> Ratings: </p>
-          <p> Likes:</p>
+        <div id="profile-second-container">
+        <div>
+          <div id="sort-text">
+            <h1><?=$userdata->Username?>'s Reviews</h1>
+            <button class="normalbutton"> Popular Reviews </button>
+              <?php
+              if(isset($_GET["sort"])){
+                $sort=$_GET["sort"];
+                if($sort=="new"){
+                  ?>
+                  <button class="normalbutton" onclick="location.href='viewprofilepage.php?sort=old&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Oldest Reviews </button>
+                  <button class="buttonhighlight" onclick="location.href='viewprofilepage.php?sort=new&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Newest Reviews </button>
+                  <?php
+                }else if($sort=="old"){
+                  ?>
+                  <button class="buttonhighlight" onclick="location.href='viewprofilepage.php?sort=old&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Oldest Reviews </button>
+                  <button class="normalbutton" onclick="location.href='viewprofilepage.php?sort=new&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Newest Reviews </button>
+                  <?php
+                }
+              }else{
+                ?>
+                <button class="buttonhighlight" onclick="location.href='viewprofilepage.php?sort=old&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Oldest Reviews </button>
+                <button class="normalbutton" onclick="location.href='viewprofilepage.php?sort=new&pageid=<?=$pageid?>&user=<?=$userdata->Username?>'"> Newest Reviews </button>
+                <?php
+              }
+              ?>
+              <button class="normalbutton"> Top 5 games</button>  
           </div>
+          <?php
+            $userID=$userdata->UserID;
+            $reviews=$database->query("SELECT r.* FROM review AS r INNER JOIN review_owner AS ro ON r.Review_ID=ro.Review_ID AND ro.User_ID='$userID'");
+            $reviews=$reviews->fetchAll();
+            if(isset($_GET["sort"])){
+              $sort=$_GET["sort"];
+              if($sort=="new"){
+            for($i=count($reviews)-1;$i>-1;$i--){
+              $reviewID=$reviews[$i]["Review_ID"];
+              $gameData=$database->query("SELECT g.* FROM games AS g INNER JOIN game_review AS gr ON g.game_ID=gr.game_ID AND gr.Review_ID='$reviewID'");
+              $gameData=$gameData->fetchObject();
+              
+              $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+              $likes=$likes->fetchObject();
+            ?>
+            <div class="review-sort-container">
+              <div id="view-review-container">
+                <div id="review-image-container">
+                  <img src="resources/GameImages/<?php echo $gameData->Cover_Image?>"/>
+                </div>
+                <div id="view-review-box">
+                  <h1><?php echo $gameData->Name?></h1>
+                  <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p>
+                  <p><span>Ratings:</span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                  <p><span>Likes:</span> <?php echo $likes->reviewCount?></p>
+                </div>
+              </div>
+              <?php
+              }
+
+            }else if($sort=="old"){
+              for($i=0;$i<count($reviews);$i++){
+                $reviewID=$reviews[$i]["Review_ID"];
+                $gameData=$database->query("SELECT g.* FROM games AS g INNER JOIN game_review AS gr ON g.game_ID=gr.game_ID AND gr.Review_ID='$reviewID'");
+                $gameData=$gameData->fetchObject();
+                
+                $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+                $likes=$likes->fetchObject();
+              ?>
+              <div class="review-sort-container">
+              <div id="view-review-container">
+                <div id="review-image-container">
+                  <img src="resources/GameImages/<?php echo $gameData->Cover_Image?>"/>
+                </div>
+                <div id="view-review-box">
+                  <h1><?php echo $gameData->Name?></h1>
+                  <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p>
+                  <p><span>Ratings:</span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                  <p><span>Likes:</span> <?php echo $likes->reviewCount?></p>
+                </div>
+              </div>
+              <?php
+              }
+            }
+          }else{
+            for($i=0;$i<count($reviews);$i++){
+              $reviewID=$reviews[$i]["Review_ID"];
+              $gameData=$database->query("SELECT g.* FROM games AS g INNER JOIN game_review AS gr ON g.game_ID=gr.game_ID AND gr.Review_ID='$reviewID'");
+              $gameData=$gameData->fetchObject();
+              
+              $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
+              $likes=$likes->fetchObject();
+              ?>
+              <div class="review-sort-container">
+              <div id="view-review-container">
+                <div id="review-image-container">
+                  <img src="resources/GameImages/<?php echo $gameData->Cover_Image?>"/>
+                </div>
+                <div id="view-review-box">
+                  <h1><?php echo $gameData->Name?></h1>
+                  <p><span> Description:</span> <?php echo $reviews[$i]["reviews"] ?></p>
+                  <p><span>Ratings:</span> <?php echo $reviews[$i]["ratings"] ?> </p>
+                  <p><span>Likes:</span> <?php echo $likes->reviewCount?></p>
+                </div>
+              </div>
+              <?php
+              }
+            }
+            ?>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+      </div>
+    </body>
+</html>   
+  

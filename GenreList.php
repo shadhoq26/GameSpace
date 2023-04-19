@@ -24,12 +24,11 @@ $searchResults = $searchResults->fetchAll();
         <div id="search-image-container">
             <img src="resources/GameImages/<?php echo $searchResults[$i]["Cover_Image"] ?>"/>
         </div>
-        
         <div id="information-box">
             <h1 class = "boxText2"><?php echo $searchResults[$i]["Name"] ?></h1> 
-            <p>Publisher: <?php echo $searchResults[$i]["Publisher"] ?></p>
-            <p>Platform: <?php echo $searchResults[$i]["Platform"] ?></p>
-            <p>Price: <?php echo $searchResults[$i]["Price"] ?></p>
+            <p><span>Publisher:</span> <?php echo $searchResults[$i]["Publisher"] ?></p>
+            <p><span>Platform:<span> <?php echo $searchResults[$i]["Platform"] ?></p>
+            <p><span>Price:</span> <?php echo $searchResults[$i]["Price"] ?></p>
         </div>
         <span class="divider"></span>
         <div id="search-rating-box">

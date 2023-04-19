@@ -67,8 +67,10 @@ function getAverageBreakdown($id){
     $count9=count($rating9);
     $count10=count($rating10);
 
-    $total=$count1+$count2+$count3+$count4+$count5+$count6+$count7+$count8+$count9+$count10;
-
+    $total=$count1+$count2+$count3+$count4+$count5+$count6+$count7+$count8+$count9+$count10;    
+    if($total<=0){
+        $total=1;
+    }
     $breakdown=array($count1,$count2,$count3,$count4,$count5,$count6,$count7,$count8,$count9,$count10,$total);
     return $breakdown;
 }
