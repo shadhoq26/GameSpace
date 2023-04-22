@@ -6,12 +6,16 @@
         <div id="main">
             <?php
             include "database.php";
+            // Checking to see if the gameID is set in the url.
+
             if(isset($_GET["id"])){
                 $gameID=$_GET["id"];
+                // Ask the database to get the game data.
                 $results=$database->query("SELECT * FROM games WHERE game_ID=$gameID");
                 if($results->rowCount()==1){
                     $game=$results->fetchObject();
                 }
+                // Gets average score and breakdown of the game
                 include "average-score-script.php";
                 $average= getAverage($gameID);
                 $breakdown= getAverageBreakdown($gameID);
@@ -44,6 +48,7 @@
 
                                 <tr>
                                     <td>10 (<?php echo $breakdown[9] ?>)</td>
+                                    <!-- How many people gave it a rating of 10/total amount of votes, to get a percentage of how many people voted it a rating of 10 and display this in a bar form by giving the css that percentage. -->
                                     <td><span class="rating-bar" style="width:<?php echo round(($breakdown[9]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
                                 <tr>
@@ -91,9 +96,6 @@
                                     <td><span class="rating-bar" style="width:<?php echo round(($breakdown[0]/$breakdown[10])*100,2)?>%"> &nbsp; </span></td>
                                 </tr>
                             </table>
-                            
-                            <!-- <div id="rating-bar-percentage">
-                            </div> -->
                         </div>
                     </div> 
                     <div class="bottom-container">
@@ -101,6 +103,7 @@
                             <form id="reviewbox" action="makereview.php" method="post">
                                 <h1> Write your review </h1>
                                 <input type="text" name="description" placeholder="Write review here">
+                                <!-- setting the form data id -->
                                 <input type="hidden" name="id" value="<?php echo $_GET['id'];?>">
                                 <h3> Choose a rating </h3>
                                 <div class="radio_container">
@@ -125,6 +128,7 @@
                                     <input type="radio" name="rating" value="10" id="rating10">
                                     <label for="rating10">10</label>
                                     <?php
+                                    // error message will only show, if you press submit for a review and script finds an error and only display then.
                                     if(isset($_GET["error"])){
                                     ?>
                                     <p id=""><?php echo $_GET["error"] ?> </p>
@@ -172,11 +176,16 @@
                                     if($sort=="new"){
                                         for($i=count($reviews)-1;$i>-1;$i--){
                                             $reviewID=$reviews[$i]["Review_ID"];
+                                            // getting the account that is associated with the review.
                                             $account=$database->query("SELECT a.* FROM accounts AS a INNER JOIN review_owner AS ro ON a.UserID=ro.User_ID AND ro.Review_ID=$reviewID");
                                             $account=$account->fetchObject();
+
+                                            //getting how many likes a review has.
                                             $likes=$database->query("SELECT SUM(Review_ID=$reviewID) AS reviewCount FROM likes");
                                             $likes=$likes->fetchObject();
                                             
+                                            // if statement checks if the review is yours or anther users as if it is your account, it will link to your profile page,
+                                            // if it is another users, it will link to their profile page.
                                             if(isset($_SESSION["user"]) && $account->UserID==$_SESSION["user"]->UserID){
                                                 $profileLink="profilepage.php";
                                             }else{

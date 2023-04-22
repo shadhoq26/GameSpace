@@ -4,6 +4,7 @@
 
 <html>
   <?php
+  //check to see if you have the game id. or else it will go to the home page. 
   include "database.php";
   if(!isset($_GET["pageid"])){
     header("location: index.php");
@@ -12,14 +13,15 @@
 
   $pageid=trim($_GET["pageid"]);
   
-
+  // checking to see if you sent a username.
   if(!isset($_GET["user"])){
     header("location: Viewgamepage.php?id=$pageid");
     exit();
   }
-
+  // getting the user data by using the username from the database.
   $username=trim($_GET["user"]);
   $userdata=$database->query("SELECT * FROM accounts WHERE Username='$username'");
+  // checking to see if the user exists, if they didnt find the user you will be taken back to the previous page.
   if($userdata->rowCount()==1){
     $userdata=$userdata->fetchObject();
 
@@ -29,12 +31,14 @@
   }
 
  
-
+// Getting how many people they follow and how many people follow them to display on the profile page.
   $followers=$database->query("SELECT SUM(Followee_ID=$userdata->UserID) AS followers FROM followers");
   $followers=$followers->fetchObject();
 
   $following=$database->query("SELECT SUM(Follower_ID=$userdata->UserID) AS following FROM followers");
   $following=$following->fetchObject();
+
+  // checking to see if you as a user follow them already.
   if(isset($_SESSION["user"])){
     $userID=$_SESSION["user"]->UserID;
     $followCheck=$database->query("SELECT * FROM followers WHERE Followee_ID='$userdata->UserID' AND Follower_ID='$userID'");
@@ -71,6 +75,7 @@
               <span>Bio: I love games !</span>
             </p>
             <?php
+            // The button will change depending on if you want to follow or unfollow another user.
             if($followingUser){
             ?>
             <button onclick="location.href='followscript.php?follow=<?=$userdata->UserID?>&user=<?=$username?>&pageid=<?=$pageid?>'"> Unfollow </button> 

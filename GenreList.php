@@ -4,6 +4,8 @@
 <?php 
 include "database.php";
 include "average-score-script.php";
+
+// using the games associated with the genre.
 $searchText= $_GET["genre"];
 $searchSQL ="SELECT * FROM games WHERE Genre LIKE '%$searchText%'"; 
  
@@ -16,6 +18,7 @@ $searchResults = $searchResults->fetchAll();
     <h1 id="page-title"><?php echo $_GET["genre"] ?> games</h1>
     <?php
     
+    // loops through all the games and displaying it, getting average score as well.
     for($i=0; $i<count($searchResults);$i++){
         $url= "ViewGamepage.php?id=".$searchResults[$i]["game_ID"];
         $average= getAverage($searchResults[$i]["game_ID"]);

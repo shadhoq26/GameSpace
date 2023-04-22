@@ -6,10 +6,14 @@
     <?php 
     include "database.php";
     include "average-score-script.php";
+
+    // checking to see if you have something typed in to search or else it will take you back to index page.
     if(!isset($_GET["search"])){
         header("location:index.php");
         exit();
     }
+
+    // searching the database to see if the game, genre, platform or publisher matches the database will give that result.
     $searchText= $_GET["search"];
     $searchSQL ="SELECT * FROM games WHERE Name LIKE '%$searchText%' OR 
         Genre LIKE '%$searchText%' OR
@@ -22,6 +26,7 @@
 
     <div id="box-container2">
         <?php
+        // if statement checkes if you have any results or else no search results.
         if(count($searchResults)>0 && !empty($searchText)){
             for($i=0; $i<count($searchResults);$i++){
             $url= "ViewGamepage.php?id=".$searchResults[$i]["game_ID"];

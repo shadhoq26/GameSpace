@@ -37,6 +37,7 @@ if(empty($_POST["rating"])){
 $description=$_POST["description"];
 $rating=$_POST["rating"];
 
+// Checking to see if you already written a review for the game.
 $userReviews=$database->query("SELECT * FROM review_owner WHERE User_ID=$userID");
 $userReviews=$userReviews->fetchAll();
 foreach($userReviews as $review){
@@ -48,6 +49,7 @@ foreach($userReviews as $review){
     }
 }
 
+// This will save the review into the database.
 $database->query("INSERT INTO review(reviews,ratings)VALUES('$description','$rating')");
 $reviewID=$database->lastInsertId();
 $database->query("INSERT INTO game_review(Review_ID,game_ID)VALUES('$reviewID','$pageid')");

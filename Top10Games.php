@@ -3,22 +3,28 @@
 
 
 <?php
+// This will include the database and average score script in the page 
 include "database.php";
 include "average-score-script.php";
+
+// Getting all the games from database
 $games=$database->query("SELECT * FROM games");
 $games=$games->fetchAll();
 $gameRatings=array();
 
+// Going through all the games and getting the average score which is added to a list.
 for($i=0;$i<count($games);$i++){
     $gameID=$games[$i]["game_ID"];
     $gameAverage=getAverageValue($gameID);
     $gameRatings[$gameID]=$gameAverage;
 }
+// Sorts the list of average scores in decending order
 asort($gameRatings);
 $sortedGames=$gameRatings;
 $top10games=array();
 $gameIDList=array_keys($sortedGames);
 
+//Getting data for each game, with the list of average scores and adding it to the top 10 games list.
 for($i=count($gameIDList)-1;$i>-1;$i--){
     $gameID=$gameIDList[$i];
     $gameData=$database->query("SELECT * FROM games WHERE game_ID=$gameID");
@@ -27,13 +33,15 @@ for($i=count($gameIDList)-1;$i>-1;$i--){
     $game->name=$gameData->Name;
     $game->image=$gameData->Cover_Image;
     $game->id=$gameData->game_ID;
+
+
     array_push($top10games,$game);
 }
 ?>
 
 <div id="main3">
     <h1 id="top-game-title"> Top 10 Games </h1>
-        <!--Will display The Top 10 rated games.  -->
+        <!--Will display The Top 10 rated games, printing out different data for each game.  -->
         <div id= "block3-container">
             <div class="block3" onclick = "location.href='ViewGamepage.php?id=<?php echo $top10games[0]->id?>'" ><h1>1.<?php echo $top10games[0]->name?></h1><img src = "resources/GameImages/<?php echo $top10games[0]->image?>"></div>
             <div class="block3" onclick = "location.href='ViewGamepage.php?id=<?php echo $top10games[1]->id?>'" ><h1>2.<?php echo $top10games[1]->name?></h1><img src = "resources/GameImages/<?php echo $top10games[1]->image?>"></div>
