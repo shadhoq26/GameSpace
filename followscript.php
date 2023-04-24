@@ -14,6 +14,7 @@ if(!isset($_GET["pageid"])){
 }
 $pageid=$_GET["pageid"];
 
+
 if(!isset($_SESSION["user"])){
     header("location: viewprofilepage.php?user=".$userpageid."&pageid=".$pageid."&error= Sign Up/Login to like this game.");
     exit();
@@ -32,7 +33,7 @@ if($userID==$followID){
 }
 $followCheck=$database->query("SELECT * FROM followers WHERE Follower_ID=$userID AND Followee_ID=$followID");
 
-
+// if you are following them and delete follow
 if($followCheck->rowCount()>0){
     $database->query("DELETE FROM followers WHERE Follower_ID=$userID AND Followee_ID=$followID");
 }else{
