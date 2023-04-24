@@ -33,7 +33,6 @@ if($userID==$followID){
 }
 $followCheck=$database->query("SELECT * FROM followers WHERE Follower_ID=$userID AND Followee_ID=$followID");
 
-// if you are following them and delete follow
 if($followCheck->rowCount()>0){
     $database->query("DELETE FROM followers WHERE Follower_ID=$userID AND Followee_ID=$followID");
 }else{

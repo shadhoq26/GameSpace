@@ -1,5 +1,4 @@
 <?php
-
 // Function will return the average score of the game.
 // Function gets a game id and calculates the average review score
 function getAverage($id){

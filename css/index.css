@@ -98,19 +98,7 @@
  #textInnerContainer img{
     height: 50%;
  }
-
- /* #watermark{
-   position: fixed;
-   margin-left: 5px;
-   color: rgb(255, 255, 255);
-   display: block;
-   z-index: 100;
-   margin-top: 115px;
-   font-size: 20px;
-   font-family:'Poppins';
-   text-shadow: 2px 2px 3px rgb(0, 0, 0);
-} */
-
+ 
 .block {
    width: 300px;
    height: 400px;
@@ -151,7 +139,6 @@
 #first-box{
    width: 55%;
    height: 100%;
-   /* background:linear-gradient(#c850c0, #4158d0); */
    float: Left;
    border-radius: 3px;
    box-sizing: border-box;

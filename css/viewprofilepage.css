@@ -26,14 +26,12 @@
   box-shadow: rgba(4, 4, 22, 0.3) 5px 20px 20px;
   margin-left: 10px;
   margin-top: 10px;
-
 }
 
 #follow-container{
   width: 40%;
   margin-left: 10px;
   margin-top: 40px;
-
 }
 
 #bio{
@@ -82,15 +80,13 @@
 #personal-info p{
   margin: 10px;
   font-size: 15px;
-  font-weight: bold;
-  
+  font-weight: bold; 
 }
 
 span{
  font-weight: bold;
  text-shadow: black 40px;
- color: rgb(109, 35, 124);
-  
+ color: rgb(109, 35, 124); 
 }
 
 #text1{

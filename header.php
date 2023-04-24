@@ -11,7 +11,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>    
-        <!-- <h2 id="watermark"> Website created by Shadman Hoque </h2>       -->
         <div class = "header">
             <div id= "titleContainer">
                 <img id="GameSpaceLogo" src="resources/spaceship1.png">
